@@ -1,2 +1,25 @@
-<h1>{{ 'general.404.title' | t }}</h1>
-<p>{{ 'general.404.subtext_html' | t }}</p>
+<h1>{{ section.settings.title | t }}</h1>
+<p>{{ section.settings.subtitle_404 | t }}</p>
+
+
+
+{% schema %}
+  {
+    "name": "template 404",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "404 title",
+        "default": "404"
+      }, {
+        "type": "text",
+        "id": "subtitle_404",
+        "label": "404 Subtitle",
+        "default": "this page is Not Found(:"
+      }
+
+
+    ]
+  }
+{% endschema %}

@@ -1,11 +1,12 @@
 {
-    "name": "template-404",
-    "wrapper": "div#templat_404.temp_404[customeatt=hello]",
+    "name": "template title 404",
+    "wrapper": "div.template404",
+  
     "sections": {
-        "template404":{
-            "type": "text",
-            "lable":"template title"
+        "uniqueid101":{
+           "type":"template-404"
         }
     },
-    "order": ["template404"]
+    "order": ["uniqueid101"]
+
 }
