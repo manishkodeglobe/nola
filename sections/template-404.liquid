@@ -1,11 +1,22 @@
-<h1>{{ section.settings.title | t }}</h1>
-<p>{{ section.settings.subtitle_404 | t }}</p>
+<div class="mx-w-md flex items-center justify-center text-center py-7 h-screen">
+  <div class="text-5xl font-bold my-4">
+    {{ section.settings.title }}
+  </div>
+  <div class="my-4">
+    <p class="  md text-xl leading-normal">{{ section.settings.subtitle_404 }}</p>
+  </div>
+  <div class="my-4">
+    <a href="{{  }}">{{ section.settings.button_back_to_home }}</a>
+  </div>
+</div>
 
 
 
 {% schema %}
   {
     "name": "template 404",
+    "tag": "section",
+    "class": "",
     "settings": [
       {
         "type": "text",
@@ -17,6 +28,13 @@
         "id": "subtitle_404",
         "label": "404 Subtitle",
         "default": "this page is Not Found(:"
+      }, {
+        "type": "text",
+        "id": "button_back_to_home",
+        "label": "back button",
+        "default": "back to home page"
+      }, {
+        "type": "url"
       }
 
 
