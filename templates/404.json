@@ -1,0 +1,11 @@
+{
+    "name": "template-404",
+    "wrapper": "div#templat_404.temp_404[customeatt=hello]",
+    "sections": {
+        "template404":{
+            "type": "text",
+            "lable":"template title"
+        }
+    },
+    "order": ["template404"]
+}
