@@ -1,0 +1,19 @@
+<div class="banner">
+  {{ section.settings.slide_1 }}
+</div>
+
+
+{% schema %}
+  {
+    "name": "hero banner",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "slide_1",
+        "label": "Slideshow Image 1",
+        "max-width": 1680,
+        "max-height": 100
+      }
+    ]
+  }
+{% endschema %}

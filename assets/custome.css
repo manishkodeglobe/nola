@@ -4,3 +4,70 @@
     box-sizing: border-box;
    
 }
+
+/* 404 page css  */
+.template404 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+ 
+
+/* Footter css */
+
+.footer_section{ 
+    padding: 100px 0;
+
+}
+
+footer{
+    background-color: #EBEAE6;
+}
+.footer_heading_title{
+    padding-bottom: 20px;
+ 
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 150%;
+    /* identical to box height, or 27px */
+    letter-spacing: 1px;
+    color: #2D2D2D;
+
+}
+ul.footer_links_menu{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 1px;
+    color: #2D2D2D;
+}
+
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 72vh;
+    text-transform: capitalize;
+    font-size: 96px;
+    font-family: cursive;
+}
+
+
+.e-mailling_paragraph{
+ max-width: 80%;
+font-style: normal;
+font-weight: 700;
+font-size: 17px;
+line-height: 143%;
+ 
+letter-spacing: 1px;
+padding-bottom: 40px;
+color: #2D2D2D;
+
+
+}
