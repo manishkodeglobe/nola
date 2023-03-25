@@ -1,19 +1,56 @@
-<div class="banner">
-  {{ section.settings.slide_1 }}
+{% comment %} slider {% endcomment %}
+
+<div class="flexslider">
+  <ul class="slides">
+    <li>
+      <img
+        src="{{ 'banner-1.webp' | asset_url }}"
+        alt="Banner 1"
+        loading="lazy"
+        width="full"
+        height="full">
+
+    </li>
+    <li>
+      <img
+        src="{{ 'banner-2.jpg' | asset_url }}"
+        alt="Banner 2"
+        loading="lazy"
+        width="full"
+        height="full">
+    </li>
+    <li>
+      <img
+        src="{{ 'banner-3.jpg' | asset_url }}"
+        alt="Banner 3"
+        loading="lazy"
+        width="full"
+        height="full">
+    </li>
+    <li>
+      <img
+        src="{{ 'banner-1.webp' | asset_url }}"
+        alt="Banner 1"
+        loading="lazy"
+        width="full"
+        height="full">
+
+    </li>
+    <li>
+      <img
+        src="{{ 'banner-2.jpg' | asset_url }}"
+        alt="Banner 2"
+        loading="lazy"
+        width="full"
+        height="full">
+    </li>
+    <li>
+      <img
+        src="{{ 'banner-3.jpg' | asset_url }}"
+        alt="Banner 3"
+        loading="lazy"
+        width="full"
+        height="full">
+    </li>
+  </ul>
 </div>
-
-
-{% schema %}
-  {
-    "name": "hero banner",
-    "settings": [
-      {
-        "type": "image_picker",
-        "id": "slide_1",
-        "label": "Slideshow Image 1",
-        "max-width": 1680,
-        "max-height": 100
-      }
-    ]
-  }
-{% endschema %}
