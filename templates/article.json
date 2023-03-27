@@ -1,0 +1,16 @@
+{
+
+    "name": "article Template",
+    "wrapper": "div.templatearticle",
+
+
+
+    "sections": {
+        "uniquear-ticle":{
+            "type": "template-article"
+        }
+    },
+    "order": ["uniquear-ticle"]
+}
+
+ 

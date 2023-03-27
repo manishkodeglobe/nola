@@ -48,7 +48,13 @@
 
     <script>
       $(document).ready(function() {
-        $('.flexslider').flexslider({animation: 'fade', slideshowSpeed: 7000, animationSpeed: 600});
+        $('.flexslider').flexslider({
+          animation: 'fade',
+          slideshowSpeed: 7000,
+          animationSpeed: 600,
+          initDelay: 0,
+          start: function(slider) {}
+        });
       });
     </script>
   </body>
