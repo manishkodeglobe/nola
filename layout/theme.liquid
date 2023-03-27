@@ -32,12 +32,11 @@
 
 
     {% section 'footer' %}
-    {% comment %} scripts {% endcomment %}
-    {{ 'application.js' | asset_url | script_tag }}
-    {{ 'flexslider-init.js' | asset_url | script_tag | }}
+    <script src="{{ 'flexslider-init.js' | asset_url }}" async></script>
+    <script src="{{ 'application.js' | asset_url }}" async></script>
 
     {% comment %} alpin js start {% endcomment %}
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     {% comment %} alpin js end {% endcomment %}
 
 
@@ -49,38 +48,7 @@
 
     <script>
       $(document).ready(function() {
-        $('.flexslider').flexslider({
-          animation: 'slide',
-          slideshowSpeed: 2000,
-          animationSpeed: 600,
-          pauseOnHover: true,
-          controlNav: false,
-          directionNav: true,
-          keyboard: true,
-          pausePlay: false,
-          touch: true,
-          randomize: false,
-          smoothHeight: false,
-          startAt: 0,
-          slideshow: true,
-          animationLoop: true,
-          sync: '',
-          asNavFor: '',
-          itemWidth: 0,
-          itemMargin: 0,
-          minItems: 0,
-          maxItems: 0,
-          move: 0,
-          allowOneSlide: true,
-          prevText: 'Previous',
-          nextText: 'Next',
-          easing: 'swing',
-          before: function() {},
-          after: function() {},
-          end: function() {},
-          added: function() {},
-          removed: function() {}
-        });
+        $('.flexslider').flexslider({animation: 'fade', slideshowSpeed: 7000, animationSpeed: 600});
       });
     </script>
   </body>

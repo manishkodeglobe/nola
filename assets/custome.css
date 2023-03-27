@@ -47,6 +47,12 @@ ul.footer_links_menu{
     color: #2D2D2D;
 }
 
+ul.footer_links_menu li{
+
+    padding-bottom: 10px;
+}
+
+
 
 .banner {
     display: flex;
@@ -90,8 +96,54 @@ color: #2D2D2D;
     overflow: hidden;
  }
 
+ .flexslider {
+    border: 0px!important;
+ }
+
  .flex-control-nav{
     bottom: 0px!important;
  }
 
+ .form_wrapper {
+    border-bottom: 2px solid #6660607a;
+    width: 54%;
+}
+ input.email_input_homepage {
+    font-size: 20px;
+    padding: 10px 0;
+    background: transparent;
+}
+input.submit_input_homepage{
+    font-size: 20px;
+    cursor: pointer;
+   
+    background: transparent;
+    border-bottom: 2px solid #6660607a;
 
+}
+
+
+.ig_link{
+    opacity: 0.7;
+    color: #2D2D2D;
+
+}
+
+.privacy_policy_text_typo{
+    color: #2D2D2D;
+    opacity: 0.7;
+    letter-spacing: 1px;
+
+
+}
+
+
+::placeholder {
+    color: #2D2D2D;
+    opacity: 0.7;
+  }
+  
+
+  /* curser on hover */
+
+ 

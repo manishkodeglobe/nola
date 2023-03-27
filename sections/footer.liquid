@@ -5,7 +5,16 @@
         <div class="w-1/2">
           <p class="e-mailling_paragraph">{{ section.settings.footer_form_paragraph }}</p>
           <form>
-            <input type="email" placeholder="Email"><input type="submit" value="JOIN">
+            <div class="form_wrapper">
+              <input
+                class="email_input_homepage"
+                type="email"
+                placeholder="Email">
+              <input
+                class="submit_input_homepage"
+                type="submit"
+                value="JOIN">
+            </div>
           </form>
         </div>
         <div class="w-1/3">
@@ -50,7 +59,7 @@
             <div class="ig_link mx-3">TW</div>
           </div>
         </div>
-        <div class="w-1/2 flex justify-between">
+        <div class="w-1/2 flex justify-between privacy_policy_text_typo">
           <div class=" w-1/1 coppyRightText">
             <p>&copy; {{ 'now' | date: '%Y' }}
               {{ section.settings.copyRight_Message }}</p>
@@ -86,6 +95,7 @@
         "default": "UNHIDE. ALL RIGHTS RESERVED"
 
       }
+
     ]
   }
 {% endschema %}
