@@ -1,8 +1,13 @@
 <h1>{{ article.title }}</h1>
 
-<small>{{ article.author }}</small>
+{% if section.settings.enable_article_authoor_name %}
+  <small>{{ article.author }}</small>
+{% endif %}
 
-<time datetime="{{ article.published_at | date: '%y-%m-%d' }}">{{ article.published_at | date: '%y-%m-%d' }}</time>
+
+{% if section.settings.enable_article_published_date %}
+  <time datetime="{{ article.published_at | date: '%y-%m-%d' }}">{{ article.published_at | date: '%y-%m-%d' }}</time>
+{% endif %}
 
 
 
@@ -36,6 +41,8 @@
         "default": true
 
       }
+
+
 
     ]
   }
