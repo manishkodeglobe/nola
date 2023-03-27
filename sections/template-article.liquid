@@ -1,11 +1,11 @@
 <h1>{{ article.title }}</h1>
 
-{% if section.settings.enable_article_authoor_name %}
+{% if section.settings.authoor_name %}
   <small>{{ article.author }}</small>
 {% endif %}
 
 
-{% if section.settings.enable_article_published_date %}
+{% if section.settings.published_date %}
   <time datetime="{{ article.published_at | date: '%y-%m-%d' }}">{{ article.published_at | date: '%y-%m-%d' }}</time>
 {% endif %}
 
@@ -29,21 +29,45 @@
     "settings": [
       {
         "type": "checkbox",
-        "id": "enable_article_authoor_name",
+        "id": "authoor_name",
         "label": "Author Name",
         "default": true
 
       }, {
 
         "type": "checkbox",
-        "id": "enable_article_published_date",
+        "id": "published_date",
         "label": "Published Date",
         "default": true
 
       }
+    ],
+    "blocks": [
+      {
+        "name": "article title",
+        "type": "article_title",
+        "limit": 1
+      },
+      {
+        "type": "enable_authoor",
+        "name": "Author Name",
+        "limit": 1
 
-
-
+      },
+      {
+        "type": "enable_published",
+        "name": "pulished Date",
+        "limit": 1
+      },
+      {
+        "type": "featured_image",
+        "name": "article image",
+        "limit": 1
+      }, {
+        "type": "article_content",
+        "name": "article content",
+        "limit": 1
+      }
     ]
   }
 {% endschema %}
