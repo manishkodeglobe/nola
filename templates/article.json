@@ -27,11 +27,12 @@
 
              
             },
-            "block_order": ["content","title","author","published_date","thumbnail"]
+            "block_order": ["thumbnail","content","title","author","published_date"]
         }
         
     },
     "order": ["uniquear-ticle"]
 }
+
 
  
