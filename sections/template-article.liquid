@@ -1,24 +1,26 @@
-<h1>{{ article.title }}</h1>
-
-{% if section.settings.authoor_name %}
-  <small>{{ article.author }}</small>
-{% endif %}
-
-
-{% if section.settings.published_date %}
-  <time datetime="{{ article.published_at | date: '%y-%m-%d' }}">{{ article.published_at | date: '%y-%m-%d' }}</time>
-{% endif %}
+<div class="text-center  container mx-auto">
+  <h1>{{ article.title }}</h1>
+  {% if section.settings.authoor_name %}
+    <small>{{ article.author }}</small>
+  {% endif %}
 
 
-
-<img
-  src="{{ article.image | image_url }}"
-  loading="lazy"
-  width="full"
-  height="full">
+  {% if section.settings.published_date %}
+    <time datetime="{{ article.published_at | date: '%y-%m-%d' }}">{{ article.published_at | date: '%y-%m-%d' }}</time>
+  {% endif %}
 
 
-<p>{{ article.content }}</p>
+
+  <img
+    src="{{ article.image | image_url }}"
+    loading="lazy"
+    width="full"
+    height="full">
+
+
+  <p>{{ article.content }}</p>
+
+</div>
 
 
 {% schema %}
@@ -55,17 +57,17 @@
 
       },
       {
-        "type": "enable_published",
+        "type": "published_date",
         "name": "pulished Date",
         "limit": 1
       },
       {
         "type": "featured_image",
-        "name": "article image",
+        "name": "thumbnail",
         "limit": 1
       }, {
         "type": "article_content",
-        "name": "article content",
+        "name": "content",
         "limit": 1
       }
     ]
