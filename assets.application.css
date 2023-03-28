@@ -612,6 +612,11 @@ video {
   margin-bottom: 1.5rem;
 }
 
+.mx-9 {
+  margin-left: 2.25rem;
+  margin-right: 2.25rem;
+}
+
 .-ml-5 {
   margin-left: -1.25rem;
 }
@@ -706,6 +711,10 @@ video {
 
 .max-w-md {
   max-width: 28rem;
+}
+
+.max-w-4xl {
+  max-width: 56rem;
 }
 
 .origin-top-left {
@@ -888,6 +897,11 @@ video {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.px-9 {
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
 }
 
 .pb-3 {
