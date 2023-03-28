@@ -84,7 +84,7 @@
   {% form 'new_comment', article %}
     <div class="flex justify-center items-center mx-auto max-w-4xl px-4">
       <div class="px-1 md:flex mb-3">
-        <div class="px-3 mr-9 md:1/2">
+        <div class="px-3 mx-4 md:1/2">
 
           <label for="comment_author" class="text-gray-700 font-medium uppercase text-xs mb-2">Name</label>
           <input
@@ -97,7 +97,7 @@
 
 
         </div>
-        <div class="px-3  md:1/2 ">
+        <div class="px-3 mx-4  md:1/2 ">
           <label for="Comment_email" class="text-gray-700 font-medium uppercase text-xs mb-2">E-mail</label>
           <input
             type="email"
@@ -106,6 +106,16 @@
             class="text-gray-700 w-full border py-3 px-4 mb-3 focus:outline-none"
             placeholder="mnu.verma77@gmail.com"
             required>
+        </div>
+        <div class="Text_aria w-full">
+
+          <label for="comment_textAria" class="w-full text-gray-700 font-medium uppercase text-xs mb-2">Message</label>
+          <input
+            type="textarea"
+            id="comment[comment_textAria]"
+
+            class="text-gray-700 font-medium uppercase text-xs mb-2">
+
         </div>
       </div>
     </div>
