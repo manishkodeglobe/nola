@@ -74,27 +74,43 @@
     {% else %}
       We Dont Have A Comments
     {% endif %}
-{% else %}
-  </div>
-  {% comment %} comment form {% endcomment %}
-  <div id="comment_form" class="mb-8">
+  </div>{% else %}
+{% endif %}
+
+{% comment %} comment form {% endcomment %}
+<div id="comment_form" class="mb-8">
 
 
-    {% form 'new_comment', article %}
-      <div class="flex-1 justify-center items-center mx-auto mx-w-4xl px-4">
-        <div class="px-1 md:flex mb-3">
-          <div class="px-3 md:1/2">name</div>
-          <div class="px-3 md:1/2">Email</div>
+  {% form 'new_comment', article %}
+    <div class="flex-1 justify-center items-center mx-auto mx-w-4xl px-4">
+      <div class="px-1 md:flex mb-3">
+        <div class="px-3 md:1/2">
+
+          <label for="comment_author" class="text-gray-700 font-medium uppercase text-xs mb-2">Name</label>
+          <input
+            type="text"
+            name="comment[author]"
+            id="comment_author"
+            class="text-gray-700 w-full border py-3 px-4 mb-3 focus:outline-none"
+            placeholder="Joen Doe">
+
+
+        </div>
+        <div class="px-3 md:1/2">
+          <label for="Comment_email" class="text-gray-700 font-medium uppercase text-xs mb-2">E-mail</label>
+          <input
+            type="text"
+            name="comment[email]"
+            id="Comment_email"
+            class="text-gray-700 w-full border py-3 px-4 mb-3 focus:outline-none"
+            placeholder="Joen Doe">
         </div>
       </div>
-    {% endform %}
+    </div>
+  {% endform %}
 
 
-  </div>
-
-
-
-{% endif %}
+</div>
 
 
 
