@@ -1,30 +1,60 @@
-<article>
+<article class="py-9">
   {% for block in section.blocks %}
     {% case block.type %}
       {% when 'article_title' %}
 
-      <div class="flex justify-center items-center">
+      <div class="flex justify-center items-center text-center">
         <div class="max-w-7xl">
-          <a href="{{ blog.url }}" class="text-base uppercase text-gray-500 hover:text-gray-900 font-bold">{{ blog.url }}</a>
-          <h1 class="text-4xl md:text-6xl font-medium">{{ article.title }}</h1>
+          <a
+            class="my-5"
+            href="{{ blog.url }}"
+            class="text-base uppercase text-gray-500 hover:text-gray-900 font-bold">{{ blog.url }}</a>
+          <h1 style="font-size: 40px;" class="text-9xl md:text-6xl font-medium ">{{ article.title }}</h1>
         </div>
       </div>
-      <h1>{{ article.title }}</h1>
+
 
       {% when 'enable_authoor' %}
-      {% if section.settings.authoor_name %}
-        <small>{{ article.author }}</small>
-      {% endif %}
+      <div class="flex justify-center items-center text-center">
+        <div class="max-w-7xl ">
+
+          {% if section.settings.authoor_name %}
+            <small>{{ article.author }}</small>
+          {% endif %}
+
+        </div>
+      </div>
+
+
+
       {% when 'published_date' %}
-      {% if section.settings.published_date %}
-        <time datetime="{{ article.published_at | date: '%y-%m-%d' }}">{{ article.published_at | date: '%y-%m-%d' }}</time>
-      {% endif %}
+
+      <div class="flex justify-center items-center text-center ">
+        <div class="max-w-7xl text-bold">
+          {% if section.settings.published_date %}
+            <time datetime="{{ article.published_at | date: formate: 'on_date' }}">{{ article.published_at | date: formate: 'on_date' }}</time>
+          {% endif %}
+        </div>
+      </div>
       {% when 'featured_image' %}
-      <img
-        src="{{ article.image | image_url }}"
-        loading="lazy"
-        width="full"
-        height="full">
+      <div class="max-w-7xl bg-blue-100 rounded-lg mx-2 md:mx-auto overflow-hidden my-6">
+
+        {% if article.image != blank %}
+
+          <img
+            class="w-full h-90 md:h-96 object-cover object-center h-80 "
+            src="{{ article.image | image_url }}"
+            loading="lazy"
+            width="full"
+            height="full">
+
+        {% else %}
+          {% assign placeholder_image = 'lifestyle-1' %}
+          {{ placeholder_image | placeholder_svg_tag: 'w-full  h-80  md:h-96 object-cover object-center p-5' }}
+        {% endif %}
+
+
+      </div>
       {% when 'article_content' %}
       <p>{{ article.content }}</p>
   {% else %}
