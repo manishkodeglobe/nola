@@ -68,10 +68,15 @@
 
 {% if blog.comments_enabled? %}
 
-  hello
+  <div class="comments">
+    {% if article.comments_count > 0 %}
+      We Have A comments
+    {% else %}
+      We Dont Have A Comments
+    {% endif %}
+  </div>{% else %}
 
-{% else %}
-  bye
+
 
 {% endif %}
 
