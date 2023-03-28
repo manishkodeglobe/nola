@@ -27,7 +27,7 @@
 
              
             },
-            "block_order": ["thumbnail","content","title","author","published_date"]
+            "block_order": ["published_date","thumbnail","content","title","author","published_date"]
         }
         
     },
