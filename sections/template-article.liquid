@@ -1,51 +1,37 @@
-<div class="text-center  container mx-auto">
-
-
-
+<article>
   {% for block in section.blocks %}
-
-
     {% case block.type %}
       {% when 'article_title' %}
+
+      <div class="flex justify-center items-center">
+        <div class="max-w-7xl">
+          <a href="{{ blog.url }}" class="text-base uppercase text-gray-500 hover:text-gray-900 font-bold">{{ blog.url }}</a>
+          <h1 class="text-4xl md:text-6xl font-medium">{{ article.title }}</h1>
+        </div>
+      </div>
       <h1>{{ article.title }}</h1>
-      {% when 'article_author' %}
+
+      {% when 'enable_authoor' %}
       {% if section.settings.authoor_name %}
         <small>{{ article.author }}</small>
       {% endif %}
-
-
+      {% when 'published_date' %}
+      {% if section.settings.published_date %}
+        <time datetime="{{ article.published_at | date: '%y-%m-%d' }}">{{ article.published_at | date: '%y-%m-%d' }}</time>
+      {% endif %}
+      {% when 'featured_image' %}
+      <img
+        src="{{ article.image | image_url }}"
+        loading="lazy"
+        width="full"
+        height="full">
+      {% when 'article_content' %}
+      <p>{{ article.content }}</p>
   {% else %}
-
     {% endcase %}
-
-
-
   {% endfor %}
+</article>
 
-
-
-  <h1>{{ article.title }}</h1>
-  {% if section.settings.authoor_name %}
-    <small>{{ article.author }}</small>
-  {% endif %}
-
-
-  {% if section.settings.published_date %}
-    <time datetime="{{ article.published_at | date: '%y-%m-%d' }}">{{ article.published_at | date: '%y-%m-%d' }}</time>
-  {% endif %}
-
-
-
-  <img
-    src="{{ article.image | image_url }}"
-    loading="lazy"
-    width="full"
-    height="full">
-
-
-  <p>{{ article.content }}</p>
-
-</div>
 
 
 {% schema %}
