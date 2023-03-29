@@ -68,9 +68,46 @@
 
 {% if blog.comments_enabled? %}
 
-  <div class="comments">
+  <div class="comments container mx-auto">
     {% if article.comments_count > 0 %}
-      We Have A comments
+
+    <div class="flex justify-center items-center max-w-4xl max-auto px-4">
+      <h1 class="text-xl mb-4 font-medium">See What People Are Saying</h1>
+    </div>
+
+
+
+{% paginate article.comments by 4 %}
+  {% for  commentt in article.comments %}
+
+    <div class=" border leading-relaxed p-7" style="padding:20px; margin:20px 0px">
+      <div class="author_name_comment_date flex   items-center">
+
+        <div class="author_name_div">
+          <span class="author_name"> {{ commentt.author }}</span> 
+        </div>
+        <div class="author_comment_date">
+          <span> {{ commentt.created_at | date: formate: 'on_date' }}</span>
+        </div>
+
+      </div>
+
+<div class="Author_comment_content py-10">
+  <p> {{ commentt.content }}</p>
+</div>
+</div>
+    
+  {% endfor %}
+{% endpaginate %}
+
+
+
+
+
+ 
+
+
+
     {% else %}
       We Dont Have A Comments
     {% endif %}
@@ -85,7 +122,7 @@
 
   {% form 'new_comment', article %}
     <div class="">
-      <div class="px-1 flex mb-7 py-8">
+      <div class="px-1 flex mb-7 py-8 md:block">
         <div class="px-3 w-full " style="margin-right: 10px;">
             <label for="comment_author" class="text-gray-700 font-medium uppercase text-xs mb-2">Name</label>
             <input 
@@ -117,9 +154,9 @@
             <textarea class="w-full text-gray-700 resize-none h-60 py-2 px-3 focus:outline-none border" name="comment[body]" id="comment_content" required></textarea>
         </div>
     </div>
-    <div class="px-1 md:flex mb-3 justify-center items-center">
+    <div class="px-1 my-4 md:flex  justify-center items-center">
         <div class="px-3">
-            <input type="submit" class="cursor-pointer px-4 py-2 border text-base font-medium text-black bg-gray-900 hover:bg-gray-500" value="Post comment">
+            <input type="submit" class="cursor-pointer px-4 py-2 border text-base font-medium text-black bg-gray-700 hover:bg-gray-500" value="Post comment">
         </div>
     </div>
  
@@ -149,7 +186,6 @@
         "id": "published_date",
         "label": "Published Date",
         "default": true
-
       }
     ],
     "blocks": [
