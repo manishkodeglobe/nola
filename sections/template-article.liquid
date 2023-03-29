@@ -77,14 +77,14 @@
 
 
 
-{% paginate article.comments by 4 %}
+{% paginate article.comments by 2 %}
   {% for  commentt in article.comments %}
 
-    <div class=" border leading-relaxed p-7" style="padding:20px; margin:20px 0px">
-      <div class="author_name_comment_date flex   items-center">
+    <div class=" border leading-relaxed " style="padding:20px; margin:20px 0px">
+      <div class="author_name_comment_date flex   items-center my-4">
 
-        <div class="author_name_div">
-          <span class="author_name"> {{ commentt.author }}</span> 
+        <div class="author_name_div" style="padding-right: 100px;">
+          <span class="author_name font-bold "> {{ commentt.author }}</span> 
         </div>
         <div class="author_comment_date">
           <span> {{ commentt.created_at | date: formate: 'on_date' }}</span>
@@ -98,6 +98,11 @@
 </div>
     
   {% endfor %}
+  {% if paginate.pages %}
+<div class="flex justify-center font-bold">
+  <h1>{{ paginate | default_pagination }}</h1>
+  </div>   
+  {% endif %}
 {% endpaginate %}
 
 
@@ -123,6 +128,49 @@
   {% form 'new_comment', article %}
     <div class="">
       <div class="px-1 flex mb-7 py-8 md:block">
+
+
+    {% if form.error %}
+
+    <div class="border p-5">
+      <div class="flex flex-row items-center w-full my-3">
+        <div class="text-red-500">
+          {% render 'icon-failed' %}
+        </div>
+        <div class="text-sm font-medium ml-3">
+          Your Comment Was Not Posted
+        </div>
+      </div>
+    </div>
+
+   
+
+    {% elsif form.posted_successfully? %} 
+     
+      <div class="border p-5">
+        <div class="flex flex-row items-center w-full my-3">
+          <div class="text-red-500">
+            {% render 'icon-success' %}
+          </div>
+          <div class="text-sm font-medium ml-3">
+            Your Comment Was Posted Successfully
+          </div>
+        </div>
+
+        <ul class="px-4">
+
+        {% for error in form.errors %}
+          <li>{{ form.error.message[error] }}</li>
+        {% endfor %}
+ error render karwana he 
+        </ul>
+      </div>
+      
+      
+    {% endif %}
+
+
+
         <div class="px-3 w-full " style="margin-right: 10px;">
             <label for="comment_author" class="text-gray-700 font-medium uppercase text-xs mb-2">Name</label>
             <input 
