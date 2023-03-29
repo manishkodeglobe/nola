@@ -187,10 +187,10 @@
         </div>
       </div>
 
-      <ul class="px-4">
+      <ul class="px-4 flex justify-center my-3">
 
       {% for error in form.errors %}
-        <li>{{ form.errors.messages[error] }}</li>
+        <li class="font-bold">{{ form.errors.messages[error] }}</li>
       {% endfor %}
 
       </ul>
