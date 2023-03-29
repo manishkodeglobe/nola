@@ -183,13 +183,22 @@
           Your Comment Was Not Posted
         </div>
       </div>
+
+      <ul class="px-4">
+
+      {% for error in form.errors %}
+        <li>{{ form.error.messages[error] }}</li>
+      {% endfor %}
+
+      </ul>
+ 
     </div>
 
    
 
     {% elsif form.posted_successfully? %} 
      
-      <div class="border p-5">
+      <div class="  p-5">
         <div class="flex flex-row items-center w-full my-3 justify-center">
           <div class="text-red-500">
             {% render 'icon-success' %}
@@ -199,13 +208,7 @@
           </div>
         </div>
 
-        <ul class="px-4">
 
-        {% for error in form.errors %}
-          <li>{{ form.error.message[error] }}</li>
-        {% endfor %}
- 
-        </ul>
       </div>
       
       
