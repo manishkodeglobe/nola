@@ -210,7 +210,7 @@
   </div>
 </div>
 
-<script>
+<script type="application/ld+json"> 
 
 {
   "@context":"http://schema.org/",
@@ -223,9 +223,22 @@
 
   {% if article.image %}
   "image":[
-    {{ article.image | image_url | prepend: 'https:' | json }}
+    {{ article.image | image_url | prepend: 'https:' | json }},
   ],
 {% endif %}
+
+"datePublished":{{ article.published_at | date: format: "default" | json }},
+"date":{{ article.created_at | date: format: "default" | json }},
+
+"author":{
+  "@type": "person",
+  "name":{{ shop.author | json }}
+}
+"publisher":{
+  "@type":"organization"
+  "@name":{{ shop.name }}
+}
+
 
 
 }
