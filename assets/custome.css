@@ -162,3 +162,10 @@ input.submit_input_homepage{
     top: 0!important;
     margin: 0!important;
 }
+
+ .slider_title_home_page {
+    margin: 80px 0 10px;
+    max-width: 34%;
+ 
+    font-weight: lighter;
+}

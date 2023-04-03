@@ -17,12 +17,20 @@
       {% endif %}
     </a>
 
-    <div class="  flex-col p-5">
-      <span class="text-sm text-gray-400">{{ product_product.vendor }}</span>
-      <a href="{{ product_product.url }}">
-        <h1 class="text-gray-700 uppercase font-medium">{{ product_product.title }}</h1>
-      </a>
-      <p class="text-gray-500">{{ product_product.price | money }}</p>
+    <div class="flex p-5 justify-between">
+      <div class="product_name">
+
+        <span class="text-sm text-gray-400">{{ product_product.vendor }}</span>
+        <a href="{{ product_product.url }}">
+          <h1 class="text-gray-700 uppercase font-medium">{{ product_product.title }}</h1>
+        </a>
+
+      </div>
+      <div class="Product_price">
+
+        <p class="text-gray-500">{{ product_product.price | money }}</p>
+
+      </div>
     </div>
 
   </div>

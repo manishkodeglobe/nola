@@ -1,16 +1,29 @@
-<div class="flex justify-center my-7">
-  <h1>{{ section.settings.title }}</h1>
+<div class="container mx-auto">
+  <div class="my-9 slider_title_home_page font-light">
+    <span>Trending</span>
+    <h1 class="text-6xl font-light">{{ section.settings.title }}</h1>
+  </div>
+{% comment %} slider {% endcomment %}
+<div class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+  {% for product in section.settings.featured_collection.products limit: section.settings.number_of_product_show %}
+    <div class="swiper-slide">
+      {% render 'product-card', product_product: product %}
+    </div>
+  {% endfor %}
+  </div>
+
+  </div>
 </div>
+</div>
+</div>
+  {% comment %} end {% endcomment %}
 
-
-{% for product in section.settings.featured_collection.products %}
-
-
-  {% render 'product-card', product_product: product %}
-
-{% endfor %}
-
-
+</div>
 {% schema %}
   {
     "name": "Featured Collection",
@@ -24,7 +37,25 @@
         "type": "collection",
         "id": "featured_collection",
         "label": "Featured Collection"
+      },
+      {
+        "type":"range",
+        "id":"number_of_product_show",
+        "label": "number of product show",
+        "default": 6,
+        "min": 6,
+        "max": 12,
+        "step": 1
+      
+      }
+    ],
+
+    "presets": [
+      {
+        "name": "Featured Collection"
       }
     ]
+   
+   
   }
 {% endschema %}
