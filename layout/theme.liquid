@@ -18,13 +18,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.0/flexslider.css">
 
 
+    {% comment %} swipper slider {% endcomment %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+
 
   </head>
   <body>
 
     {% section 'header' %}
 
-
+    {% section 'banner' %}
+    {% render 'swipper-slider' %}
 
     <main role="main">
       {{ content_for_layout }}
@@ -57,6 +62,32 @@
         });
       });
     </script>
+    {% comment %} swipper slider {% endcomment %}
+    {% comment %} swipper slider {% endcomment %}
+    {% comment %} swipper slider {% endcomment %}
+    {% comment %} swipper slider {% endcomment %}
+    {% comment %} swipper slider {% endcomment %}<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"> </script>
+
+    <script>
+      const swiper = new Swiper('.swiper', { // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+        slidesPerView: 3,
+
+
+
+// Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+
+
+      });
+    </script>
+
+
+
   </body>
 
 

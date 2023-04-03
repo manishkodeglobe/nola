@@ -146,4 +146,19 @@ input.submit_input_homepage{
 
   /* curser on hover */
 
- 
+  .swiper {
+    /* width:1400px; */
+    /* height: 300px; */
+  }
+
+  .swiper-button-prev {
+    top: 0!important;
+    position: relative!important;
+   
+    margin: 0!important;
+    left: 89%!important;
+}
+.swiper-button-next {
+    top: 0!important;
+    margin: 0!important;
+}
