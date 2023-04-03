@@ -1,13 +1,6 @@
 {
-    "name": "Index Template",
-    "wrapper": "div.index_file",
     "sections": {
 
-        "index_templateid":{
-            "type": "template-index"
-        }
-
-
-
-    }
+    },
+    "order": []
 }
