@@ -1,15 +1,5 @@
- 
 {
     "sections": {
-
-        "Homepage-banner":{
-            "type":"banner"
-          
-        },
-
-
-
-
         "featured-collection": {
             "type":"featured-collection",
             "settings": {
@@ -19,16 +9,12 @@
         "list-collection":{
             "type": "template-list-collections",
             "settings": {
-
                 "collection_lists": "all"
-
             }
-        },
-        "second-level-banner":{
-            "type": "second-level-banner"
         }
 
     },
-    "order": ["featured-collection","list-collection","second-level-banner"]
+    "order": ["featured-collection","list-collection"]
 }
  
+
