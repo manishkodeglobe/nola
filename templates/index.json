@@ -6,8 +6,20 @@
             "settings": {
                 "featured_collection":"all"
             }
+        },
+        "list-collection":{
+            "type": "template-list-collections",
+            "settings": {
+
+                "collection_lists": "all"
+
+            }
+        },
+        "second-levelbanner-with-logo":{
+            "type": "second-level-banner"
         }
+
     },
-    "order": ["featured-collection"]
+    "order": ["featured-collection","list-collection","second-levelbanner-with-logo"]
 }
  
