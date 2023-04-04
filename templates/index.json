@@ -1,6 +1,15 @@
  
 {
     "sections": {
+
+        "Homepage-banner":{
+            "type":"banner"
+          
+        },
+
+
+
+
         "featured-collection": {
             "type":"featured-collection",
             "settings": {
@@ -15,11 +24,11 @@
 
             }
         },
-        "second-levelbanner-with-logo":{
+        "second-level-banner":{
             "type": "second-level-banner"
         }
 
     },
-    "order": ["featured-collection","list-collection","second-levelbanner-with-logo"]
+    "order": ["featured-collection","list-collection","second-level-banner"]
 }
  
