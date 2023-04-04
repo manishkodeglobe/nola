@@ -1,13 +1,7 @@
 {
     "sections": {
 
-        "HomePage_banner": {
-            "type":"banner",
-            "settings": {
-        
-            }
-      
-        },
+ 
 
 
 
@@ -26,7 +20,7 @@
         }
 
     },
-    "order": ["featured-collection","list-collection","HomePage_banner"]
+    "order": ["featured-collection","list-collection"]
 }
  
  

@@ -28,13 +28,15 @@
 
     {% section 'header' %}
 
+    {% section 'banner' %}
+
 
 
     <main role="main">
       {{ content_for_layout }}
     </main>
 
-
+    {% section 'second-level-banner' %}
 
     {% section 'footer' %}
     <script src="{{ 'flexslider-init.js' | asset_url }}" async></script>
