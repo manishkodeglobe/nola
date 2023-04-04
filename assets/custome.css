@@ -169,3 +169,52 @@ input.submit_input_homepage{
  
     font-weight: lighter;
 }
+
+
+/* n */
+
+.list_collections_section{
+    background-color: #F7F7F5;
+}
+.heading-withsmall-slider {
+    padding: 150px 0;
+}
+
+.image_width_logos{
+    background-color: #F7F7F5;
+
+}
+
+
+.heaing_small.text-center small{
+ 
+ height: 40px;
+
+font-family: 'Lato';
+font-style: normal;
+font-weight: 400;
+font-size: 13px;
+line-height: 200%;
+letter-spacing: 2px;
+text-transform: uppercase;
+color: #2D2D2D;
+
+
+}
+
+
+.heaing_small  h1{
+
+    font-family: 'FreightBig Pro';
+    font-style: italic;
+    max-width: 52%;
+    margin: auto;
+    font-weight: 300;
+    font-size: 54px;
+    line-height: 100%;
+    letter-spacing: -1px;
+    text-transform: capitalize;
+    color: #2D2D2D;
+    padding: 50px 0;
+  
+}

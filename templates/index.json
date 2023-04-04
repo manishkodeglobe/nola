@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+ 
 {
     "sections": {
         "featured-collection": {
@@ -10,19 +10,4 @@
     },
     "order": ["featured-collection"]
 }
-=======
-{
-  "sections": {
-    "featured-collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured Collection",
-        "featured_collection": "frontpage"
-      }
-    }
-  },
-  "order": [
-    "featured-collection"
-  ]
-}
->>>>>>> 076f8c27bb5dcd2e843e5bb4f65ecece27276bcb
+ 
