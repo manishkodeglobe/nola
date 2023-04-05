@@ -16,7 +16,11 @@
          
         },
         "second-level-banner":{
-            "type":"second-level-banner"
+            "type":"second-level-banner",
+            "settings": {
+                "title":"In the press",
+                "description":"“Move over Prada: Millennials can’t get enough of Confiance”"
+            }
         },
         "hero":{
             "type":"banner"
