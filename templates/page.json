@@ -1,7 +1,7 @@
 {
     "sections": {
-        "page-id":{
+        "pageid":{
             "type":"template-page"
         }
-    }
+    },"order": ["pageid"]
 }
