@@ -1,7 +1,18 @@
 {
-    "sections": {
-        "pageid":{
-            "type":"template-page"
-        }
-    },"order": ["pageid"]
+  "sections": {
+    "pageid": {
+      "type": "template-page",
+      "settings": {
+      }
+    },
+    "7c287727-7535-4183-aa22-efd7a595b712": {
+      "type": "contact-form",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "pageid",
+    "7c287727-7535-4183-aa22-efd7a595b712"
+  ]
 }
