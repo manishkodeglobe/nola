@@ -2,6 +2,9 @@
     "sections": {
         "pageid":{
             "type":"template-page"
+        },
+        "pagecontact":{
+            "type":"contact-form"
         }
-    },"order": ["pageid"]
+    },"order": ["pageid","pagecontact"]
 }
