@@ -31,7 +31,9 @@
     {% section 'banner' %}
 
 
-    {% section 'image-with-text' %}
+    {% if template == 'index' %}
+      {% section 'image-with-text' %}
+    {% endif %}
 
 
     <main role="main">
