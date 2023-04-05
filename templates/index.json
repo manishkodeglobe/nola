@@ -1,5 +1,12 @@
 {
     "sections": {
+        "Image_with_text": {
+            "type":"image-with-text",
+            "settings":{
+                "title":"rfer",
+                "subtitle":"refre"
+            }
+        },
 
         "featured-collection": {
             "type":"featured-collection",
