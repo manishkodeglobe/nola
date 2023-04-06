@@ -1,33 +1,39 @@
 {
-    "sections": {
- 
-        "featured-collection": {
-            "type":"featured-collection",
-            "settings": {
-                "featured_collection":"all"
-            }
-        },
-        "image-n-text":{
-            "type":"image-with-text"
-        },
-
-        "list-collections":{
-            "type":"template-list-collections"
-         
-        },
-        "second-level-banner":{
-            "type":"second-level-banner",
-            "settings": {
-                "title":"In the press",
-                "description":"“Move over Prada: Millennials can’t get enough of Confiance”"
-            }
-        },
-        "hero":{
-            "type":"banner"
-        }
-
+  "sections": {
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "featured_collection": "all"
+      }
     },
-    "order": ["hero","featured-collection" ,"image-n-text","list-collections","second-level-banner"]
+    "image-n-text": {
+      "type": "image-with-text",
+      "settings": {
+      }
+    },
+    "list-collections": {
+      "type": "template-list-collections",
+      "settings": {
+      }
+    },
+    "second-level-banner": {
+      "type": "second-level-banner",
+      "settings": {
+        "title": "In the press",
+        "description": "“Move over Prada: Millennials can’t get enough of Confiance”"
+      }
+    },
+    "hero": {
+      "type": "banner",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "featured-collection",
+    "image-n-text",
+    "list-collections",
+    "second-level-banner"
+  ]
 }
- 
- 
