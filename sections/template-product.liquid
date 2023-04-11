@@ -1,1 +1,51 @@
-{{ product.title }}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" defer></script>
+
+
+
+<div class="container mx-auto">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+    {% comment %} product medias like images .video external videos etc {% endcomment %}
+    <div class="product--medias">
+      <div class="hidden md:block">
+        {% for media in product.media %}
+          <div class="h-100 overflow-hidden p-5">
+            {% render 'product-media', media: media %}
+          </div>
+        {% endfor %}
+      </div>
+      <div class="md:hidden">
+        <div class="product_swipper h-96">
+          <div class="swiper-wrapper">
+            {% for media in product.media %}
+              <div class="swiper-slide">
+                <div class="p-2 h-90 overflow-hidden">
+                  {% render 'product-media', media: media %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </div>
+    {% comment %} Product Information like .product title ,description ,variant selector etc {% endcomment %}
+    <div class="product--information">
+      <div>
+        <h1>{{ product.title }}</h1>
+        <p>{{ product.content }}</p>
+        <h1>{{ product.price | money }}</h1>
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<script>
+  const swiper = new swiper('.product_swipper', {direction: 'verticle'});
+</script>

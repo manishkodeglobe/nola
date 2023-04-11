@@ -723,8 +723,16 @@ video {
   height: 20rem;
 }
 
+.h-96 {
+  height: 24rem;
+}
+
 .h-full {
   height: 100%;
+}
+
+.h-9 {
+  height: 2.25rem;
 }
 
 .w-1\/2 {
