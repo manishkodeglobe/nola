@@ -5,7 +5,7 @@
       "settings": {
       }
     },
-    "7c287727-7535-4183-aa22-efd7a595b712": {
+    "contact_form_id12": {
       "type": "contact-form",
       "settings": {
       }
@@ -13,6 +13,6 @@
   },
   "order": [
     "pageid",
-    "7c287727-7535-4183-aa22-efd7a595b712"
+    "contact_form_id12"
   ]
 }
