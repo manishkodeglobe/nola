@@ -108,6 +108,15 @@ color: #2D2D2D;
     border-bottom: 2px solid #6660607a;
     width: 54%;
 }
+
+@media (max-width:992px) {
+
+    .form_wrapper {
+     
+        width: 100%;
+    }
+    
+}
  input.email_input_homepage {
     font-size: 20px;
     padding: 10px 0;
