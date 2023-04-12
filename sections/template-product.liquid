@@ -1,51 +1,115 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" defer></script>
+<style>
+  .Swiper_Button_For_Product_Slide_prev::after {}
+  .Swiper_Button_For_Product_Slide_next::after {}
+  .Swiper_Button_For_Product_Slide_prev {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    cursor: pointer;
+  }
+  .Swiper_Button_For_Product_Slide_next {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    right: 0;
+    cursor: pointer;
+  }
+  .swiper-pagination {
+    color: black;
+    bottom: 0 !important;
+  }
+  .swiper-pagination-bullet-active {
+    background: black !important;
+  }
+</style>
 
-
-
-<div class="container mx-auto">
+<div class="container mx-auto my-8">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-    {% comment %} product medias like images .video external videos etc {% endcomment %}
+    {% comment %} Product Media {% endcomment %}
     <div class="product--medias">
       <div class="hidden md:block">
         {% for media in product.media %}
-          <div class="h-100 overflow-hidden p-5">
+          <div class="h-100 overflow-hidden p-4">
             {% render 'product-media', media: media %}
           </div>
         {% endfor %}
       </div>
+
       <div class="md:hidden">
-        <div class="product_swipper h-96">
+        <div class="swiper h-94">
           <div class="swiper-wrapper">
             {% for media in product.media %}
               <div class="swiper-slide">
-                <div class="p-2 h-90 overflow-hidden">
+                <div class="h-full overflow-hidden">
                   {% render 'product-media', media: media %}
                 </div>
               </div>
             {% endfor %}
           </div>
+
           <div class="swiper-pagination"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
+
+          <div class="Swiper_Button_For_Product_Slide_prev">
+            {% render 'leftarrow' %}
+          </div>
+          <div class="Swiper_Button_For_Product_Slide_next">
+            {% render 'rightarrow' %}
+          </div>
         </div>
       </div>
     </div>
-    {% comment %} Product Information like .product title ,description ,variant selector etc {% endcomment %}
+    {% comment %} product form and informations {% endcomment %}
     <div class="product--information">
-      <div>
-        <h1>{{ product.title }}</h1>
-        <p>{{ product.content }}</p>
-        <h1>{{ product.price | money }}</h1>
 
-      </div>
+      {% form 'product', product %}
+        <div class="my-3">
+          <span class="text-xs text-gray-500">{{ product.vendor }}</span>
+        </div>
+        <div class="my-3">
+          <h1 class="text-3xl text-gray-900">{{ product.title }}</h1>
+        </div>
+        <div class="my-3">
+
+         {% assign  product_price = product.selected_or_first_available_variant %}
+
+         <span>{{ product_price.compare_at_price }}</span>
+         <span>{{ product_price.price }}</span>
+
+         {% if product_price.price < product_price.compare_at_price %}{
+
+         sale
+         }
+          
+         {% endif %}
+
+
+         
+        </div>
+
+        </div>
+      {% endform %}
+
 
 
     </div>
   </div>
 </div>
 
+
 <script>
-  const swiper = new swiper('.product_swipper', {direction: 'verticle'});
+  const swiper = new Swiper('.swiper', {
+    direction: 'horizontal',
+
+    pagination: {
+      el: '.swiper-pagination'
+    },
+
+    navigation: {
+      prevEl: '.Swiper_Button_For_Product_Slide_prev',
+      nextEl: '.Swiper_Button_For_Product_Slide_next'
+    }
+  });
 </script>
