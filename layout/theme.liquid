@@ -68,10 +68,29 @@
     {% comment %} swipper slider {% endcomment %}<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"> </script>
 
     <script>
-      const swiper = new Swiper('.swiper', { // Optional parameters
+      const swiper = new Swiper('.swiper', {
+
+        // Optional parameters
         direction: 'horizontal',
         loop: true,
-        slidesPerView: 3,
+        slidesPerView: 1,
+
+        breakpoints: {
+          '552': {
+            slidesPerView: 1,
+            spaceBetween: 40
+          },
+
+          '762': {
+            slidesPerView: 2,
+            spaceBetween: 40
+          },
+          '1200': {
+            slidesPerView: 3,
+            spaceBetween: 40
+          }
+
+        },
 
 // Navigation arrows
         navigation: {
