@@ -11,6 +11,9 @@
   {{ media | external_video_tag: class: "h-80 w-full object-cover" }}
 
   {% when 'video' %}
-  {{ media | video_tag: controls: true, class: "h-80 w-full h-90 object-cover" }}{% else %}
+  {{ media | video_tag: controls: true, class: "h-80 w-full h-90 object-cover" }}
+{% else %}
+
+  {{ media | media_tag }}
 
 {% endcase %}
