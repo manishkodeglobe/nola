@@ -1,6 +1,8 @@
 <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
+{% assign selected_variant = product.selected_or_first_available_variant %}
+
 <style>
   .Swiper_Button_For_Product_Slide_prev::after {}
   .Swiper_Button_For_Product_Slide_next::after {}
@@ -68,95 +70,118 @@
     {% comment %} product form and informations {% endcomment %}
     <div class="product--information sticky top-10 p-2">
       {% form 'product', product %}
-        <input type="hidden"
+        <input
+          type="hidden"
           name="id"
-          value="{{ product.selected_or_first_available_variant.id }}">
+          value="{{ selected_variant.id }}">
 
-        {% comment %} show Vender {% endcomment %}
-        <div class="my-3">
-          <span class="text-xs text-gray-500">{{ product.vendor }}</span>
-        </div>
-        <div class="my-3">
-          {% comment %} Show Title {% endcomment %}
-          <h1 class="text-3xl text-gray-900">{{ product.title }}</h1>
-        </div>
+        {% for block in section.blocks %}
 
-        {% comment %} Show Price {% endcomment %}
-        <div class="my-3">
-          {% assign product_price = product.selected_or_first_available_variant %}
-          <span class="text-base text-gray-500 line-through">{{ product_price.compare_at_price | money }}</span>
-          <span class="text-lg text-gray-500">{{ product_price.price | money }}</span>
-          {% if product_price.price < product_price.compare_at_price %}
-            <span class="px-5 py-1 text-sm font-bold bg-red-500 rounded-full text-white mx-4">Sale</span>
-          {% endif %}
+          {% case block.type %}
+            {% when 'vendor' %}
+            {% comment %} show Vender {% endcomment %}
+            <div class="my-3">
+              <span class="text-xs text-gray-500">{{ product.vendor }}</span>
+            </div>
+            {% when 'title' %}
+              <div class="my-3">
+              {% comment %} Show Title {% endcomment %}
+              <h1 class="text-3xl text-gray-900">{{ product.title }}</h1>
+            </div>
+            {% when 'price' %}
+            {% comment %} Show Price {% endcomment %}
+            <div class="my-3">
 
-        </div>
-        {% comment %} Show  variants  {% endcomment %}
-        <div class="my-3">
-          {% unless product.has_only_default_variant %}
-            <div
-              class=""
-              data-url="{{ product.url }}"
-              data-section="{{ section.id }}">
-              {% for option in product.options_with_values %}
-
-                <label for="option-{{ option.name }}-{{ forloop.index0 }}">{{ option.name }}</label>
-
-                <div class="my-5">
-                  <select
-                    class="w-full border py-3 px-3"
-                    name="{{ option.name }}-{{ forloop.index0 }}"
-                    id="option-{{ option.name }}-{{ forloop.index0 }}">
-
-                    {% for value in option.values %}
-
-
-                      <option value="{{ value | escape }}" {% if option.seleacted_value == value %}selected="selected"{% endif %}>{{ value }}</option>
-
-                    {% endfor %}
-
-
-                  </select>
-                </div>
-
-              {% endfor %}
+              <span class="text-base text-gray-500 line-through">{{ selected_variant.compare_at_price | money }}</span>
+              <span class="text-lg text-gray-500">{{ selected_variant.price | money }}</span>
+              {% if selected_variant.price < selected_variant.compare_at_price %}
+                <span class="px-5 py-1 text-sm font-bold bg-red-500 rounded-full text-white mx-4">Sale</span>
+              {% endif %}
             </div>
 
-          {% endunless %}
-        </div>
+            {% when 'variant_selecter' %}
+            {% comment %} Show  variants  {% endcomment %}
+            <div class="my-3">
+              {% unless product.has_only_default_variant %}
+                <div
+                  class=""
+                  data-url="{{ product.url }}"
+                  data-section="{{ section.id }}">
+                  {% for option in product.options_with_values %}
 
-        {% comment %} End Varieants {% endcomment %}
-        {% comment %} Show Quantity {% endcomment %}
-        <div class="my-3">
-          <label for="quantity-{{ section.id }}">quantity</label>
-          <div class="in">
-            <input
-              type="number"
-              name="quantity"
-              id="{{ section.id }}"
-              value="1"
-              min="1"
-              class="w-full border px-3 py-3">
-          </div>
-        </div>
+                    <label for="option-{{ option.name }}-{{ forloop.index0 }}">{{ option.name }}</label>
 
-        {% comment %} Product Description {% endcomment %}
-        <p class="text-gray-500">{{ product.description }}</p>
-        {% comment %} Product Add To Cart Button {% endcomment %}
-        <button
-          type="submit"
-          name="add"
-          class="w-full px-6 py-4 bg-gray-900 text-white hover:bg-gray-700 duration-2 rounded-sm my-2"
-          {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}>
+                    <div class="my-5">
+                      <select
+                        class="w-full border py-3 px-3"
+                        name="{{ option.name }}-{{ forloop.index0 }}"
+                        id="option-{{ option.name }}-{{ forloop.index0 }}">
 
-          {% if product.selected_or_first_available_variant.available == false %}
-            Sold Out
-          {% else %}
-            Add To Cart
-          {% endif %}
+                        {% for value in option.values %}
 
 
-        </button>
+                          <option value="{{ value | escape }}" {% if option.seleacted_value == value %}selected="selected"{% endif %}>{{ value }}</option>
+
+                        {% endfor %}
+
+
+                      </select>
+                    </div>
+
+                  {% endfor %}
+                </div>
+
+              {% endunless %}
+            </div>
+
+            {% comment %} End Varieants {% endcomment %}
+
+            {% when 'quantity' %}
+
+            {% comment %} Show Quantity {% endcomment %}
+            <div class="my-3">
+              <label for="quantity-{{ section.id }}">quantity</label>
+              <div class="in">
+                <input
+                  type="number"
+                  name="quantity"
+                  id="{{ section.id }}"
+                  value="1"
+                  min="1"
+                  class="w-full border px-3 py-3">
+              </div>
+            </div>
+
+            {% when 'description' %}
+            {% comment %} Product Description {% endcomment %}
+            <p class="text-gray-500">{{ product.description }}</p>
+
+
+            {% when 'checkout_button' %}
+            {% comment %} Product Add To Cart Button {% endcomment %}
+            <button
+              type="submit"
+              name="add"
+              class="w-full px-6 py-4 bg-gray-900 text-white hover:bg-gray-700 duration-2 rounded-sm my-2"
+              {% if selected_variant.available == false %}disabled{% endif %}>
+
+              {% if selected_variant.available == false %}
+                Sold Out
+              {% else %}
+                Add To Cart
+              {% endif %}
+
+
+            </button>
+
+
+
+        {% else %}
+
+          {% endcase %}
+
+        {% endfor %}
+
 
 
       {% endform %}
@@ -185,3 +210,47 @@
     }
   });
 </script>
+
+
+
+{% schema %}
+  {
+    "name": " Product",
+    "blocks": [
+      {
+        "type": "vendor",
+        "name": "vendor",
+        "limit": 1
+      },
+      {
+        "type": "title",
+        "name": "title",
+        "limit": 1
+      },
+      {
+        "type": "price",
+        "name": "price",
+        "limit": 1
+      },
+      {
+        "type": "variant_selecter",
+        "name": "variant selector",
+        "limit": 1
+      }, {
+        "type": "quantity",
+        "name": "Quantity",
+        "limit": 1
+      }, {
+        "type": "description",
+        "name": "description",
+        "limit": 1
+      }, {
+        "type": "checkout_button",
+        "name": "checkout button",
+        "limit": 1
+      }
+
+    ]
+
+  }
+{% endschema %}
