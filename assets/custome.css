@@ -251,26 +251,23 @@ color: #2D2D2D;
 
 /* grid */
 
-.template--18784032424240__list-collections-1  {
-    margin-left: auto;
-}
-.template--18784032424240__list-collections-1  img{
-    margin-left: auto;
-}
-.template--18784032424240__list-collections-3 {
-    margin-left: auto;
-}
-.template--18784032424240__list-collections-3 img{
-    margin-left: auto;
-}
- .template--18784032424240__list-collections-5 {
-    margin-left: auto;
- }
- .template--18784032424240__list-collections-5 img{
-    margin-left: auto;
- }
 
-
+.collection-image_directions.template--18795108434224__list-collections-1{
+    margin-left: auto;
+}
+.collection-image_directions.template--18795108434224__list-collections-3  {
+    margin-left: auto;
+}
+.collection-image_directions.template--18795108434224__list-collections-5   {
+    margin-left: auto;
+}
+.collection-image_directions.template--18795108434224__list-collections-5 img{
+    margin-left: auto;
+    margin-left: auto;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
  .collection-image_directions{
     width: 80%;
  }
