@@ -4,18 +4,19 @@
       <div class="md:flex">
         <div class="w-1/2">
           <p class="e-mailling_paragraph">{{ section.settings.footer_form_paragraph }}</p>
-          <form>
-            <div class="form_wrapper ">
-              <input
-                class="email_input_homepage"
-                type="email"
-                placeholder="Email">
-              <input
-                class="submit_input_homepage"
-                type="submit"
-                value="JOIN">
-            </div>
-          </form>
+          <div class="NewsLetter_form">
+            {% comment %} <div class="form_wrapper ">
+            <input
+            class="email_input_homepage"
+            type="email"
+            placeholder="Email">
+            <input
+            class="submit_input_homepage"
+            type="submit"
+            value="JOIN">
+            </div> {% endcomment %}
+            {% render 'newsletter' %}
+          </div>
         </div>
         <div class="w-1/3">
           <h1 class="footer_heading_title">Shop</h1>
