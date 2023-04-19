@@ -117,19 +117,7 @@ color: #2D2D2D;
     }
     
 }
- input.email_input_homepage {
-    font-size: 20px;
-    padding: 10px 0;
-    background: transparent;
-}
-input.submit_input_homepage{
-    font-size: 20px;
-    cursor: pointer;
-   
-    background: transparent;
-    border-bottom: 2px solid #6660607a;
 
-}
 
 
 .ig_link{
@@ -271,3 +259,76 @@ color: #2D2D2D;
  .collection-image_directions{
     width: 80%;
  }
+
+
+
+
+
+
+ /* custome newsletter */
+
+ .sib-form {
+    padding: 0px!important;
+}
+
+
+div#sib-container{
+    padding: 0px!important;
+
+}
+
+#sib-form{
+    display: flex;
+}
+
+.sib-input.sib-form-block{
+    padding: 0px;
+}
+
+.news_letter_button {
+ 
+}
+
+.news_letter_input {
+ 
+}
+ .entry__field{
+    margin: 0px!important;
+    background: transparent!important;
+    border: none!important;
+}
+
+form#sib-form {
+    width: 70%;
+    border-bottom: 1px solid #80808047;
+}
+
+div#success-message {
+    width: 70%;
+}
+div#error-message{
+    width: 70%;
+}
+
+input.email_input_homepage {
+    font-size: 20px;
+    padding: 6px 0;
+    background: transparent;
+}
+ .submit_input_homepage{
+    font-size: 20px;
+    cursor: pointer;
+    background: transparent;
+
+
+}
+
+button.submit_input_homepage{
+    border-bottom: 1px solid #80808047;
+
+
+}
+
+.sib-form-block__button{
+    padding: 8px 10px!important;
+}
