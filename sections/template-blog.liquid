@@ -1,0 +1,47 @@
+<div class="container mx-auto">
+  {% paginate blog.articles by section.settings.blog_show_perpage %}
+    {% for article in blog.articles %}
+      <div class="Blogs_articles_images">
+        {% if article.image != blank %}
+          <img
+            src="{{ article.image | image_url }}"
+            width="full"
+            height="full"
+            loading="lazy">
+        {% else %}
+          {{ 'image' | placeholder_svg_tag: 'w-full bg-blue-100   h-80  md:h-96 object-cover object-center p-5' }}
+        {% endif %}
+      </div>
+      <div class="blog_article_title">
+        <h1>{{ article.title }}</h1>
+      </div>
+      <div class="bloog_article_content">
+        {% if article.excerpt.size > 0 %}
+          <p>{{ article.excerpt }}</p>
+        {% else %}
+          <p>{{ article.content | strip_html | truncatewords: 20 }}</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+    {% render 'pagination' %}
+  {% endpaginate %}
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "Blog Page Settings",
+    "settings": [
+      {
+        "type": "range",
+        "id": "blog_show_perpage",
+        "label": "show Blogs Per Page",
+        "step": 1,
+        "min": 1,
+        "max": 6,
+        "default": "3"
+      }
+    ]
+  }
+{% endschema %}

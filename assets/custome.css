@@ -115,6 +115,8 @@ color: #2D2D2D;
      
         width: 100%;
     }
+
+    
     
 }
 
@@ -148,6 +150,16 @@ color: #2D2D2D;
     /* height: 300px; */
   }
 
+
+
+  @media (max-width:762px) {
+
+    .swiper-button-prev {
+
+        left: 78%!important;
+    }
+    
+  }
   .swiper-button-prev {
     top: 0!important;
     position: relative!important;
