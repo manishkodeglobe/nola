@@ -100,7 +100,7 @@
   {% endfor %}
   {% if paginate.pages %}
 <div class="flex justify-center font-bold">
-  <h1>{{ paginate | default_pagination }}</h1>
+  <h1>{% render 'pagination', pagination: paginate %}</h1>
   </div>   
   {% endif %}
 {% endpaginate %}
@@ -129,7 +129,7 @@
 
   {% form 'new_comment', article %}
     <div class="">
-      <div class="px-1 flex mb-7 py-8 md:block">
+      <div class="px-1   mb-7 py-8 md:flex block">
 
 
 
@@ -145,7 +145,7 @@
                 required
             >
         </div>
-        <div class="px-3 w-full " style="margin-left: 10px;">
+        <div class="px-3 w-full " ">
             <label for="comment_email" class="text-gray-700 font-medium uppercase text-xs mb-2">E-mail</label>
             <input 
                 type="email" 

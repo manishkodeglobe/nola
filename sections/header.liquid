@@ -165,14 +165,14 @@
                       x-show="{{ handle_link }}"
                       @click.away="{{ handle_link }} = false">
                       {% for childlink in link.links %}
-                        <a href="#" class="-m-3 p-3 mt-2 flex items-center rounded-md text-gray-500 hover:text-gray-900 hover:bg-gray-50">
+                        <a href="{{ childlink.url }}" class="-m-3 p-3 mt-2 flex items-center rounded-md text-gray-500 hover:text-gray-900 hover:bg-gray-50">
                           <span class="ml-3 text-base font-medium text-gray-500">{{ childlink.title }}</span>
                         </a>
                       {% endfor %}
                     </div>
                   </div>
                 {% else %}
-                  <a href="#" class="-m-3 p-3 flex items-center rounded-md text-gray-500 hover:text-gray-900 hover:bg-gray-50">
+                  <a href="" class="-m-3 p-3 flex items-center rounded-md text-gray-500 hover:text-gray-900 hover:bg-gray-50">
                     {{ link.title }}
                   </a>
                 {% endif %}

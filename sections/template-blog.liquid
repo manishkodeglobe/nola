@@ -40,7 +40,10 @@
         </div>
       {% endfor %}
     </div>
-    {% render 'pagination' %}
+    <div class="pagination_for_blogs">
+      {% render 'pagination', pagination: paginate %}
+    </div>
+
   {% endpaginate %}
 </div>
 
