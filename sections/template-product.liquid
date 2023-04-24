@@ -1,7 +1,9 @@
 <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
-{% assign selected_variant = product.selected_or_first_available_variant %}
+{% assign selected_variant = product.selected_or_first_available_variant.id %}
+
+
 
 <style>
   .Swiper_Button_For_Product_Slide_prev::after {}
@@ -118,22 +120,14 @@
                         id="option-{{ option.name }}-{{ forloop.index0 }}">
 
                         {% for value in option.values %}
-
-
                           <option value="{{ value | escape }}" {% if option.seleacted_value == value %}selected="selected"{% endif %}>{{ value }}</option>
-
                         {% endfor %}
-
-
                       </select>
                     </div>
-
                   {% endfor %}
                 </div>
-
               {% endunless %}
             </div>
-
             {% comment %} End Varieants {% endcomment %}
 
             {% when 'quantity' %}
