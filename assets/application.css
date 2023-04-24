@@ -1048,10 +1048,6 @@ video {
   padding: 1.5rem;
 }
 
-.p-0 {
-  padding: 0px;
-}
-
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -1433,10 +1429,6 @@ video {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
-
-  .sm\:pt-6 {
-    padding-top: 1.5rem;
-  }
 }
 
 @media (min-width: 768px) {
@@ -1502,10 +1494,6 @@ video {
     --tw-space-x-reverse: 0;
     margin-right: calc(2.5rem * var(--tw-space-x-reverse));
     margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
-  }
-
-  .md\:p-5 {
-    padding: 1.25rem;
   }
 
   .md\:p-0 {
