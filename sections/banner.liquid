@@ -2,61 +2,95 @@
   <ul class="slides">
     <li>
       <img
-        src="{{ 'first.jpg' | asset_url }}"
-        alt="Banner 1"
-        loading="lazy"
+        src="{{ section.settings.slide_1 | image_url }}"
         width="full"
-        height="full">
+        height="full"
+        loading="lazy">
 
     </li>
     <li>
       <img
-        src="{{ 'banner-2.jpg' | asset_url }}"
-        alt="Banner 2"
-        loading="lazy"
+        src="{{ section.settings.slide_2 | image_url }}"
         width="full"
-        height="full">
+        height="full"
+        loading="lazy">
     </li>
     <li>
       <img
-        src="{{ 'banner-3.jpg' | asset_url }}"
-        alt="Banner 3"
-        loading="lazy"
+        src="{{ section.settings.slide_3 | image_url }}"
         width="full"
-        height="full">
+        height="full"
+        loading="lazy">
     </li>
     <li>
       <img
-        src="{{ 'banner-1.webp' | asset_url }}"
-        alt="Banner 1"
-        loading="lazy"
+        src="{{ section.settings.slide_4 | image_url }}"
         width="full"
-        height="full">
+        height="full"
+        loading="lazy">
 
     </li>
     <li>
       <img
-        src="{{ 'banner-2.jpg' | asset_url }}"
-        alt="Banner 2"
-        loading="lazy"
+        src="{{ section.settings.slide_5 | image_url }}"
         width="full"
-        height="full">
+        height="full"
+        loading="lazy">
     </li>
     <li>
       <img
-        src="{{ 'last.jpg' | asset_url }}"
-        alt="Banner 3"
-        loading="lazy"
+        src="{{ section.settings.slide_6 | image_url }}"
         width="full"
-        height="full">
+        height="full"
+        loading="lazy">
     </li>
   </ul>
 </div>
 
 
+
 {% schema %}
   {
-    "name": "HeroBenner"
+    "name": "HeroBenner",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "slide_1",
+        "label": "slide show image 1"
+
+      },
+      {
+        "type": "image_picker",
+        "id": "slide_2",
+        "label": "slide show image 2"
+
+      },
+      {
+        "type": "image_picker",
+        "id": "slide_3",
+        "label": "slide show image 3"
+
+
+      },
+      {
+        "type": "image_picker",
+        "id": "slide_4",
+        "label": "slide show image 4"
+
+
+      }, {
+        "type": "image_picker",
+        "id": "slide_5",
+        "label": "slide show image 5"
+
+      }, {
+        "type": "image_picker",
+        "id": "slide_6",
+        "label": "slide show image 6"
+
+      }
+    ]
+
 
   }
 {% endschema %}
