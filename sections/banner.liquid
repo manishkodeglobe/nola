@@ -53,10 +53,37 @@
   </ul>
 </div>
 
-ffffffffffff
+
+<img
+  src="{{ section.settings.slide_1 | image_url }}"
+  width="full"
+  height="full"
+  loading="lazy">
+
+
+
 {% schema %}
   {
-    "name": "HeroBenner"
+    "name": "HeroBenner",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "slide_1",
+        "label": "slide show image 1"
+
+      }, {
+        "type": "image_picker",
+        "id": "slide_2",
+        "label": "slide show image 1"
+
+      }, {
+        "type": "image_picker",
+        "id": "slide_3",
+        "label": "slide show image 1"
+
+      }
+    ]
+
 
   }
 {% endschema %}
