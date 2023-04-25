@@ -1,9 +1,7 @@
 <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
-{% assign selected_variant = product.selected_or_first_available_variant.id %}
-
-
+{% assign selected_variant = product.selected_or_first_available_variant %}
 
 <style>
   .Swiper_Button_For_Product_Slide_prev::after {}
@@ -105,22 +103,19 @@
             {% comment %} Show  variants  {% endcomment %}
             <div class="my-3">
               {% unless product.has_only_default_variant %}
-                <div
-                  class=""
-                  data-url="{{ product.url }}"
-                  data-section="{{ section.id }}">
+                <div data-url="{{ product.url }}" data-section="{{ section.id }}">
                   {% for option in product.options_with_values %}
+                    <label for="Option-{{ section.id }}-{{ forloop.index0 }}">{{ option.name }}</label>
 
-                    <label for="option-{{ option.name }}-{{ forloop.index0 }}">{{ option.name }}</label>
-
-                    <div class="my-5">
+                    <div class="my-2">
                       <select
-                        class="w-full border py-3 px-3"
-                        name="{{ option.name }}-{{ forloop.index0 }}"
-                        id="option-{{ option.name }}-{{ forloop.index0 }}">
-
+                        name="options[{{ option.name | escape }}]"
+                        id="Option-{{ section.id }}-{{ forloop.index0 }}"
+                        class="w-full border py-3 px-3">
                         {% for value in option.values %}
-                          <option value="{{ value | escape }}" {% if option.seleacted_value == value %}selected="selected"{% endif %}>{{ value }}</option>
+                          <option value="{{ value | escape }}" {% if option.selected_value == value %}selected="selected"{% endif %}>
+                            {{ value }}
+                          </option>
                         {% endfor %}
                       </select>
                     </div>
@@ -128,6 +123,7 @@
                 </div>
               {% endunless %}
             </div>
+
             {% comment %} End Varieants {% endcomment %}
 
             {% when 'quantity' %}
@@ -159,10 +155,10 @@
               class="w-full px-6 py-4 bg-gray-900 text-white hover:bg-gray-700 duration-2 rounded-sm my-2"
               {% if selected_variant.available == false %}disabled{% endif %}>
 
-              {% if selected_variant.available == false %}
-                Sold Out
-              {% else %}
+              {% if selected_variant.available %}
                 Add To Cart
+              {% else %}
+                Sold Out
               {% endif %}
 
 
