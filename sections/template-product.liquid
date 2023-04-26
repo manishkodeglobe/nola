@@ -1,5 +1,5 @@
 {% comment %}  {% endcomment %}
-{{ product.metafields.related_products.product_list.value }}
+{{ product.metafields.related_products.product_list.value.title }}
 
 <!--  -->
 
@@ -9,7 +9,7 @@
 {% assign selected_variant = product.selected_or_first_available_variant %}
 
 <style>
-  .Swiper_Button_For_Product_Slide_prev::after {}
+  .Swiper_Button_For_Product_Slide_prev::after {}.title
   .Swiper_Button_For_Product_Slide_next::after {}
   .Swiper_Button_For_Product_Slide_prev {
     position: absolute;
