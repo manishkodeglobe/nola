@@ -1,9 +1,11 @@
 {% comment %}  {% endcomment %}
 
 
-{{ product.metafield.information.type }}
-
-{{ resource.metafields.namespace.key }}
+{% if template.name == 'product' %}
+ {% if product.metafields.my_fields.product_video_url %}
+   {{ product.metafields.my_fields.product_video_url }}
+ {% endif %}
+{% endif %}
 
 <!--  -->
 
