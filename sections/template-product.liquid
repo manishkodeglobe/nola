@@ -1,6 +1,6 @@
 {% comment %}  {% endcomment %}
 
- <center>{{ product.metafields.myfield.country.value }}</center>
+
 
 <!--  -->
 
@@ -177,6 +177,9 @@
           {% endcase %}
 
         {% endfor %}
+<!--         Meta Feilds  -->
+       <center>{{ product.metafields.myfield.country.value }}</center>
+<!--       End Meta fields -->
 
         {% comment %} social sharring buttons {% endcomment %}
         <div class="flex justify-center items-center">
