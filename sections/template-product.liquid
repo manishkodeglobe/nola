@@ -2,12 +2,19 @@
 
 <!-- Meta Feilds Testing  -->
 
+<!-- Delivery Day Number For All Products -->
+
+{% if product.metafields != blank %}
+  {{ product.metafields.delivery.product_delivery_day_number.value }}
+{% endif %}
+
+
+
 {% if collections.electronics %}
 
  {{ product.metafields.custom.product_delivery_days.value }}
   
 {% endif %}
-
 
 
 <!-- Meta Feilds Testing  -->
