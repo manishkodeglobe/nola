@@ -190,7 +190,8 @@
 
 {% if collection.Accessories == true %}
   {{ product.metafields.custom.product_delivery_days.value }}
-     
+     {% else %}
+  <h1>Metafiedls are not found</h1>
   {% endif %}
       
   
