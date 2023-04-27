@@ -1,16 +1,10 @@
-{% comment %}  {% endcomment %}
-
-
-
-<!--  -->
-
-<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+ <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
 {% assign selected_variant = product.selected_or_first_available_variant %}
 
 <style>
-  .Swiper_Button_For_Product_Slide_prev::after {}.title
+  .Swiper_Button_For_Product_Slide_prev::after {}
   .Swiper_Button_For_Product_Slide_next::after {}
   .Swiper_Button_For_Product_Slide_prev {
     position: absolute;
@@ -177,40 +171,6 @@
           {% endcase %}
 
         {% endfor %}
-
-
-
-
-
-
-
-
-      
-<!-- Meta Feilds  -->
-
-{% if collection.electronics %}
-  {{ product.metafields.custom.product_delivery_days.value }}
-
-  {% endif %}
-      
-  
-
-
-
-      
-<!-- End Meta fields --
-
-
-
-
-
-
-
-
-
-
-
-      
 
         {% comment %} social sharring buttons {% endcomment %}
         <div class="flex justify-center items-center">
