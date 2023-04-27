@@ -188,6 +188,10 @@ div.SpecificationReading_button {
 
  {% if collections.electronics %}
 
+
+
+   
+
   <div class="Electronic_Items_Specifications" x-data="{ defaultHideData : false}">
     <nav><div   class="SpecificationReading_button" x-on:click="defaultHideData =  true">Read Specifications</div></nav>
     <div class=""  x-show="defaultHideData"  > {{ product.metafields.custom.electronic_product_specifications.value }}
