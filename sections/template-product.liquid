@@ -4,9 +4,11 @@
 {% if collections.electronics %}
 
   <div class="Electronic_Items_Specifications" x-data="{ specificationFalse:false }">
-    <button x-on:click="{ specificationFalse:true }">Reed Specifications</button>
+    <button x-on:click="{ specificationFalse:true }">Reed Specifications
     
     <div class="hidden" x-show="specificationFalse" > {{ product.metafields.custom.electronic_product_specifications.value }}</div>
+
+      </button>
     
     
   </div>
