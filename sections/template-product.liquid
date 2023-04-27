@@ -178,7 +178,7 @@
 
 <!-- Custome Fields For Electronic Products  -->
 <style>
-button.SpecificationReading_button {
+div.SpecificationReading_button {
     background: darkgray;
     border: 1px solid black;
     padding: 15px 15px;
@@ -190,13 +190,13 @@ button.SpecificationReading_button {
 
   <div class="Electronic_Items_Specifications" x-data="{ defaultHideData : false}">
 
-    <nav><button   class="SpecificationReading_button" x-on:click="defaultHideData =  true">Read Specifications</button></nav>
+    <nav><div   class="SpecificationReading_button" x-on:click="defaultHideData =  true">Read Specifications</div></nav>
  
     
     <div class=""  x-show="defaultHideData"  > {{ product.metafields.custom.electronic_product_specifications.value }}
 
 
-       <nav><button class="SpecificationReading_button" x-on:click="defaultHideData =   false">ReadLess Specifications</button></nav>
+       <nav><div class="SpecificationReading_button" x-on:click="defaultHideData =   false">ReadLess Specifications</div></nav>
     
     </div>
   </div>
