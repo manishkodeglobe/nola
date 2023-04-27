@@ -6,7 +6,7 @@
 
   <div class="Electronic_Items_Specifications" x-data="{ defaultHideData : false}">
     <nav><div   class="SpecificationReading_button" x-on:click="defaultHideData =  true">Read Specifications</div></nav>
-    <div class=""  x-show="defaultHideData"  > {{ collections.metafields.custom.electronic_product_specifications.value }}
+    <div class=""  x-show="defaultHideData"  > {{ product.collections.metafields.custom.electronic_product_specifications.value }}
        <nav><div class="SpecificationReading_button" x-on:click="defaultHideData =   false">ReadLess Specifications</div></nav>
     </div>
   </div>
