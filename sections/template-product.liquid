@@ -3,10 +3,12 @@
 
 {% if collections.electronics %}
 
-  <div class="Electronic_Items_Specifications">
+  <div class="Electronic_Items_Specifications" x-data="{ defaultHideData : false}">
+
+    <nav><button x-on:click="defaultHideData = true">Read...</button></nav>
  
     
-    <div class=" "   > {{ product.metafields.custom.electronic_product_specifications.value }}</div>
+    <div class=""  x-show="defaultHideData"  > {{ product.metafields.custom.electronic_product_specifications.value }}</div>
 
      
     
