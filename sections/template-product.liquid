@@ -86,7 +86,7 @@
             {% when 'title' %}
               <div class="my-3">
               {% comment %} Show Title {% endcomment %}
-              <h1 class="text-3xl text-gray-900">{{ product.title }}</h1>
+              <h1 class="text-3xl text-gray-900">{{ product.title | truncatewords: 15 }}</h1>
             </div>
             {% when 'price' %}
             {% comment %} Show Price {% endcomment %}
