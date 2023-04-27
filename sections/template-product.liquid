@@ -189,7 +189,7 @@
 }
 </style>
 
- {% if product.metafields != blank %}
+ {% if product.metafields.value != blank %}
 
   <div class="my-5 Electronic_Items_Specifications" x-data="{ defaultHideData : false}">
     <nav><div class="  px-2 my-5 SpecificationReading_button" x-on:click="defaultHideData =  true">Read Specifications..</div></nav>     
