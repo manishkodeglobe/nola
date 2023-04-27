@@ -154,34 +154,7 @@
 
 
 
-<!-- Custome Fields For Electronic Products  -->
-<style>
-button.SpecificationReading_button {
-    background: darkgray;
-    border: 1px solid black;
-    padding: 15px 15px;
-    color: white;
-}
-</style>
 
-{% if collections.electronics %}
-
-  <div class="Electronic_Items_Specifications" x-data="{ defaultHideData : false}">
-
-    <nav><button   class="SpecificationReading_button" x-on:click="defaultHideData =  true">Read Specifications</button></nav>
- 
-    
-    <div class=""  x-show="defaultHideData"  > {{ product.metafields.custom.electronic_product_specifications.value }}
-
-
-       <nav><button class="SpecificationReading_button" x-on:click="defaultHideData =   false">ReadLess Specifications</button></nav>
-    
-    </div>
-  </div>
-
-  
-{% endif %}
-<!--END Custome Fields For Electronic Products  -->
 
 
 
