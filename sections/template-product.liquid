@@ -5,12 +5,18 @@
 
   <div class="Electronic_Items_Specifications" x-data="{ defaultHideData : false}">
 
-    <nav><button x-on:click=""defaultHideData = !defaultHideData" :aria-expanded="defaultHideData ? 'true' : 'false'" :class="{ 'active': defaultHideData }">Read Specifications</button></nav>
+    <nav><button x-on:click=""defaultHideData =  true">Read Specifications</button></nav>
  
     
     <div class=""  x-show="defaultHideData"  > {{ product.metafields.custom.electronic_product_specifications.value }}</div>
 
-     
+     <div x-data="{ show: false }">
+    <button @click="show = !show" :aria-expanded="show ? 'true' : 'false'" :class="{ 'active': show }">
+    Toggle Show
+  	</button>
+    <div x-show="show">Hello world</div>
+</div>
+
     
     
   </div>
