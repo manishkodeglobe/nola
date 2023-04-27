@@ -177,9 +177,41 @@
           {% endcase %}
 
         {% endfor %}
+
+
+
+
+
+
+
+
+      
 <!-- Meta Feilds  -->
-        <p class="p-5">{{ product.metafields.myfield.country.value }}</p> 
-<!-- End Meta fields -->
+
+{% if collection.Accessories == true %}
+
+  {{ product.metafields.custom.product_delivery_days.value }}
+
+  {% endif %}
+      
+  
+
+
+
+      
+<!-- End Meta fields --
+
+
+
+
+
+
+
+
+
+
+
+      
 
         {% comment %} social sharring buttons {% endcomment %}
         <div class="flex justify-center items-center">
