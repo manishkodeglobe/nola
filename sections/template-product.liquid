@@ -10,11 +10,13 @@
     
     <div class=""  x-show="defaultHideData"  > {{ product.metafields.custom.electronic_product_specifications.value }}</div>
 
-     <div x-data="{ show: false }">
-    <button @click="show = !show" :aria-expanded="show ? 'true' : 'false'" :class="{ 'active': show }">
-    Toggle Show
+<div x-data="{ show: false }">
+  
+    <button @click="show = !show" :aria-expanded="show ? 'true' : 'false'>
+        Toggle Show
   	</button>
-    <div x-show="show">Hello world</div>
+  
+<div x-show="show">Hello world</div>
 </div>
 
     
