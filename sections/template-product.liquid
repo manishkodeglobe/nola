@@ -181,19 +181,19 @@
 <!-- Custome Fields For Electronic Products  -->
 <style>
 div.SpecificationReading_button {
-    background: darkgray;
+ 
     border: 1px solid black;
     padding: 15px 15px;
-    color: white;
+     
 }
 </style>
 
  
 
   <div class="Electronic_Items_Specifications" x-data="{ defaultHideData : false}">
-    <nav><div   class="SpecificationReading_button" x-on:click="defaultHideData =  true">Read Specifications</div></nav>
+    <nav><div   class="SpecificationReading_button" x-on:click="defaultHideData =  true">Read Specifications..</div></nav>
     <div class=""  x-show="defaultHideData"  > {{   product.metafields.custom.electronic_product_specifications.value }}
-       <nav><div class="SpecificationReading_button" x-on:click="defaultHideData =   false">ReadLess Specifications</div></nav>
+       <nav><div class="SpecificationReading_button" x-on:click="defaultHideData =   false">ReadLess Specifications..</div></nav>
     </div>
   </div>
 
