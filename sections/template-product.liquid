@@ -8,10 +8,15 @@
     <nav><button x-on:click="defaultHideData =  true">Read Specifications</button></nav>
  
     
-    <div class=""  x-show="defaultHideData"  > {{ product.metafields.custom.electronic_product_specifications.value }}</div>
+    <div class=""  x-show="defaultHideData"  > {{ product.metafields.custom.electronic_product_specifications.value }}
+
+
+       <nav><button x-on:click="defaultHideData =   false">ReadLess Specifications</button></nav>
+    
+    </div>
 
     
- <nav><button x-on:click="defaultHideData =   false">ReadLess Specifications</button></nav>
+
  
 
     
