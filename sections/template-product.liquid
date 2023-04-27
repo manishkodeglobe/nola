@@ -4,7 +4,7 @@
 
 <!-- Delivery Day Number For All Products -->
 
-{% if product.metafields != blank %}
+{% if all_products.metafields != blank %}
   <div class="flex">
   <span>Seller</span>
     <small> {{ product.metafields.delivery.product_delivery_day_number.value }}</small>
