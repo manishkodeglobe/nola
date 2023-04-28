@@ -13,7 +13,9 @@
 document.querySelector("#sort_by").addEventListener('change',(event) => {
 
    var url = new URL(window.location.href);
-  url.searchParams.set("sort_by", event.currentTarget.value);
+  url.searchParams.set("#sort_by", event.currentTarget.value);
+
+  window.location = url.href;
   
 alert(url)
 
