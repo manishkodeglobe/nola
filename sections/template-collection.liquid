@@ -8,7 +8,7 @@
   <!-- Creatting Filter For collections -->
   <div class="filters">
     <div class="flex justify-center items-center">
-      <select name="sorting" id="sort_by" class="form-select border px-4 py-2  ">
+      <select name="sorting" id="sort_by" class="form-select border px-4 py-2  w-25">
         {% for option in collection.sort_options %}
           <option value="{{ option.value }}">{{ option.name }}</option>
         {% endfor %}
