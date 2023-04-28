@@ -8,7 +8,13 @@
   <!-- Creatting Filter For collections -->
 
   <script type="text/javascript">
-    document.querySelector('sort_by')
+    document.querySelector('#sort_by').addEventListener('change', function(e){
+
+      var url = new URL(window.location.href);
+      url.searchParams('sort_by', e.currebtTarget.value);
+      window.location = url.href;
+
+    });
   </script>
   <div class="filters">
     <div class="flex justify-center items-center">
