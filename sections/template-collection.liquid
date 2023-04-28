@@ -8,16 +8,14 @@
   <!-- Creatting Filter For collections -->
 
   <script type="text/javascript">
-    var select_id =  document.getElementById("sort_by").addEventListener('change',function(e){
+    var x = document.getElementById("sort_by").value;
+    document.getElementById("demo").innerHTML = "You selected: " + x;
 
-     var man = e.target.value ;
-      alert(man)
-
-    })
+      })
 
 
 
-    const siteurl =  window.location.href;
+      const siteurl =  window.location.href;
   </script>
   <div class="filters">
     <div class="flex justify-center items-center">
