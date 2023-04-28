@@ -1,11 +1,11 @@
-
- 
+{% section 'predictive-search-bar' %}
 <div class="container mx-auto">
   <div class="relative bg-white" x-data="{ mobileMenuOpen:  false , searchBaropen: false }">
     <div class="mx-auto px-4 sm:px-6">
       {% comment %} div for Navigation {% endcomment %}
       <div class="flex justify-between items-center py-6 md:justify-start md:space-x-10">
         <!-- STORE NAME / STORE LOGO -->
+
         <div class="flex justify-start lg:flex-1 truncate">
           <a href="{{ shop.url }}">{% render 'site-icon' %}</a>
         </div>
@@ -14,20 +14,22 @@
           <button
             x-on:click="mobileMenuOpen = true"
             type="button"
-            class="bg-white p-2 inline-flex items-center justify-center focus:outline-none">
+            class="bg-white p-2 inline-flex items-center justify-center focus:outline-none"
+          >
             {% render 'mobile-menu' %}
           </button>
         </div>
         <!-- NAVIGATION MENU -->
         <nav x-data="{ open: false }" class="hidden md:flex space-x-10">
-          {% for link in linklists.main-menu.links %}
+          {% for link in linklists['main-menu'].links %}
             {% if link.links != blank %}
               {% assign link_handle = link.handle | replace: '-', '_' %}
               <div class="relative" x-data="{ {{ link_handle }} : false}">
                 <button
                   x-on:click="{{ link_handle }} = !  {{ link_handle }}"
                   type="button"
-                  class="inline-flex items-center text-base text-gray-500 hover:text-gray-900">
+                  class="inline-flex items-center text-base text-gray-500 hover:text-gray-900"
+                >
                   {{ link.title }}
                   {% render 'dropdown-icon' %}
                 </button>
@@ -40,7 +42,8 @@
                   x-transition:leave-end="opacity-0 translate-y-3"
                   x-show="{{ link_handle }}"
                   @click.away="{{ link_handle }} = false"
-                  class="absolute z-10 -ml-5 mt-5 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
+                  class="absolute z-10 -ml-5 mt-5 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2"
+                >
                   <div class="shadow-lg border ring-black ring-opacity-5 overflow-hidden rounded-lg">
                     <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                       <!-- CREATE THE SUBLINK -->
@@ -65,9 +68,12 @@
           {% endfor %}
         </nav>
         <div class="hidden md:flex items-center justify-end md:flex-1 space-x-5">
-
-          <button x-on:click="searchBaropen= true" class="whitespace-nowrap text-base text-gray-500 hover:text-gray-900">
-            {% render 'Search-icon' %}</button>
+          <button
+            x-on:click="searchBaropen= true"
+            class="whitespace-nowrap text-base text-gray-500 hover:text-gray-900"
+          >
+            {% render 'Search-icon' %}
+          </button>
 
           <a href="{{ routes.cart_url }}" class="whitespace-nowrap text-base text-gray-500 hover:text-gray-900">
             {% render 'shopping-bag' %}
@@ -77,8 +83,10 @@
             <a href="{{ routes.account_login_url }}" class="text-base text-gray-500 hover:text-gray-900">Login</a>
             <a href="{{ routes.account_register_url }}" class="text-base text-gray-500 hover:text-gray-900">Register</a>
 
-            {% comment %} {% else %}
-            {{ shop.customer_accounts_enabled }} {% endcomment %}
+            {% comment %}
+              {% else %}
+              {{ shop.customer_accounts_enabled }}
+            {% endcomment %}
           {% endif %}
         </div>
       </div>
@@ -89,20 +97,27 @@
             <button
               type="button"
               x-on:click="searchBaropen = false"
-              class="absolute top-2 right-0">{% render 'menu-close' %}</button>
+              class="absolute top-2 right-0"
+            >
+              {% render 'menu-close' %}
+            </button>
           </div>
           <div class="w-full Search_form h-40 flex items-center justify-center">
             <form
               action="{{ routes.search_url }}"
               method="get"
-              class="flex-auto">
+              class="flex-auto"
+            >
               <div class="relative text-gray-500 px-10  ">
                 <input
                   type="search"
                   name="q"
                   placeholder="Search"
-                  class="border w-full bg-white h-10 px-5  pr-10 rounded-full text-sm  ">
-                <button type="submit" class="absolute right-0 top-0 mt-2 mr-2 md:mr-20">{% render 'Search-icon' %}</button>
+                  class="border w-full bg-white h-10 px-5  pr-10 rounded-full text-sm  "
+                >
+                <button type="submit" class="absolute right-0 top-0 mt-2 mr-2 md:mr-20">
+                  {% render 'Search-icon' %}
+                </button>
               </div>
             </form>
           </div>
@@ -130,7 +145,8 @@
     {% comment %} Mobile Menu {% endcomment %}
     {% comment %} Mobile Menu {% endcomment %}
     {% comment %} Mobile Menu {% endcomment %}
-      <div x-show="mobileMenuOpen" class="absolute z-10 top-0 inset-x-0 p-2 transform origin-top-left md:hidden"> <div class="shadow-lg rounded-lg ring-1 ring-black ring-opacity-5 bg-white w-full">
+    <div x-show="mobileMenuOpen" class="absolute z-10 top-0 inset-x-0 p-2 transform origin-top-left md:hidden">
+      <div class="shadow-lg rounded-lg ring-1 ring-black ring-opacity-5 bg-white w-full">
         <div class="p-5 divide-y-2 divide-gray-50">
           <!-- MOBILE MENU HEADER TITLE PLUS CLOSE BUTTON -->
           <div class="flex items-center justify-between pb-3">
@@ -141,7 +157,8 @@
               <button
                 x-on:click="mobileMenuOpen =  false"
                 type="button"
-                class="bg-white rounded-md p-2 text-gray-500">
+                class="bg-white rounded-md p-2 text-gray-500"
+              >
                 {% render 'menu-close' %}
               </button>
             </div>
@@ -149,14 +166,15 @@
           <!-- NAVIGATION LINKS FOR MOBILE MENU -->
           <div class="pt-3">
             <nav class="grid gap-y-7" x-data="{ open: false }">
-              {% for link in linklists.main-menu.links %}
+              {% for link in linklists['main-menu'].links %}
                 {% assign handle_link = link.handle | replace: '-', '_' %}
                 {% if link.links != blank %}
                   <div x-data="{ {{ handle_link }}: false}" class="relative">
                     <button
                       x-on:click="{{ handle_link }} = ! {{ handle_link }}"
                       type="button"
-                      class="text-base text-gray-500 hover:text-gray-900 flex items-center justify-between w-full">
+                      class="text-base text-gray-500 hover:text-gray-900 flex items-center justify-between w-full"
+                    >
                       <div class=" ">
                         {{ link.title }}
                       </div>
@@ -165,16 +183,23 @@
                     <div
                       class="grid gap-y-7 py-3"
                       x-show="{{ handle_link }}"
-                      @click.away="{{ handle_link }} = false">
+                      @click.away="{{ handle_link }} = false"
+                    >
                       {% for childlink in link.links %}
-                        <a href="{{ childlink.url }}" class="-m-3 p-3 mt-2 flex items-center rounded-md text-gray-500 hover:text-gray-900 hover:bg-gray-50">
+                        <a
+                          href="{{ childlink.url }}"
+                          class="-m-3 p-3 mt-2 flex items-center rounded-md text-gray-500 hover:text-gray-900 hover:bg-gray-50"
+                        >
                           <span class="ml-3 text-base font-medium text-gray-500">{{ childlink.title }}</span>
                         </a>
                       {% endfor %}
                     </div>
                   </div>
                 {% else %}
-                  <a href="" class="-m-3 p-3 flex items-center rounded-md text-gray-500 hover:text-gray-900 hover:bg-gray-50">
+                  <a
+                    href=""
+                    class="-m-3 p-3 flex items-center rounded-md text-gray-500 hover:text-gray-900 hover:bg-gray-50"
+                  >
                     {{ link.title }}
                   </a>
                 {% endif %}
@@ -184,7 +209,5 @@
         </div>
       </div>
     </div>
-
   </div>
-
 </div>
