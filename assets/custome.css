@@ -251,7 +251,11 @@ color: #2D2D2D;
 
 /* grid */
 
-
+.collection-image_directions img{
+  width:100%;
+  height:20%;
+  
+}
  
 
  .collection-image_directions.template--18810172178736__list-collections-1 img{
