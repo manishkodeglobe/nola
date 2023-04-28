@@ -12,69 +12,14 @@
     {{ 'application.css' | asset_url | stylesheet_tag }}
     {{ 'custome.css' | asset_url | stylesheet_tag }}
 
-
     {% comment %} flex slider css links {% endcomment %}
     {{ 'flexslider.css' | asset_url | stylesheet_tag }}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.0/flexslider.css">
 
-
     {% comment %} swipper slider {% endcomment %}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-
-
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
   </head>
   <body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
     {% section 'header' %}
 
     {% if template == 'index' %}
@@ -85,7 +30,6 @@
       {{ content_for_layout }}
     </main>
 
-
     {% section 'footer' %}
     <script src="{{ 'flexslider-init.js' | asset_url }}" async></script>
     <script src="{{ 'application.js' | asset_url }}" async></script>
@@ -94,12 +38,10 @@
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     {% comment %} alpin js end {% endcomment %}
 
-
     {% comment %} flex slider and j query {% endcomment %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <script src="../assets/jquery.flexslider-min.js"></script>
-
 
     <script>
       $(document).ready(function() {
@@ -116,46 +58,42 @@
     {% comment %} swipper slider {% endcomment %}
     {% comment %} swipper slider {% endcomment %}
     {% comment %} swipper slider {% endcomment %}
-    {% comment %} swipper slider {% endcomment %}<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"> </script>
+    {% comment %} swipper slider {% endcomment %}
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
     <script>
-      const swiper = new Swiper('.swiper', {
+            const swiper = new Swiper('.swiper', {
 
-        // Optional parameters
-        direction: 'horizontal',
-        loop: true,
-        slidesPerView: 1,
+              // Optional parameters
+              direction: 'horizontal',
+              loop: true,
+              slidesPerView: 1,
 
-        breakpoints: {
-          '552': {
-            slidesPerView: 1,
-            spaceBetween: 40
-          },
+              breakpoints: {
+                '552': {
+                  slidesPerView: 1,
+                  spaceBetween: 40
+                },
 
-          '762': {
-            slidesPerView: 2,
-            spaceBetween: 40
-          },
-          '1200': {
-            slidesPerView: 3,
-            spaceBetween: 40
-          }
+                '762': {
+                  slidesPerView: 2,
+                  spaceBetween: 40
+                },
+                '1200': {
+                  slidesPerView: 3,
+                  spaceBetween: 40
+                }
 
-        },
+              },
 
-// Navigation arrows
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
-        }
-      });
+      // Navigation arrows
+              navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+              }
+            });
     </script>
 
     <script></script>
-
-
-
   </body>
-
-
 </html>
