@@ -11,13 +11,7 @@
 
   
 
-    function man(){
-        var x = document.getElementById("sort_by").value;
-      alert("ok")
-
-    
-      
-    }
+ 
  
  
   </script>
@@ -26,7 +20,7 @@
       <select name="sorting" id="sort_by" class="form-select border px-4 py-2  w-25">
         {% for option in collection.sort_options %}
           <option
-            onChange="man()"
+           
             value="{{ option.value }}"
             {% if option.value == collection.sort_by %}
               selected
