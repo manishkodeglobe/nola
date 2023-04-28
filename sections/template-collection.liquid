@@ -1,30 +1,23 @@
 <div class="container mx-auto px-4 py-8">
   <div class="Back_to_Collection_page text-center p-3">
-    <a href="{{ routes.collections_url }}" class="text-base text-gray-400 hover:text-gray-900">Go Back To Collections</a>
+    <a href="{{ routes.collections_url }}" class="text-base text-gray-400 hover:text-gray-900"
+      >Go Back To Collections</a
+    >
   </div>
 
-
-<!--   Creatting Filter For collections -->
+  <!-- Creatting Filter For collections -->
   <div class="filters">
-  <div class="flex justify-center items-center">
-
-
-    
+    <div class="flex justify-center items-center">
+      <select name="" id="" class=""></select>
+    </div>
   </div>
-  </div>
-<!--   Creatting Filter For collections -->
+  <!-- Creatting Filter For collections -->
 
-
-
-
-  
   {% paginate collection.products by section.settings.number_of_products_per_page %}
     <h1 class="text-5xl text-center py-4 mb-8">{{ collection.title }}</h1>
     <div class="max-w-6xl mx-auto">
       <div class="grid   sm:grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4">
-
         {% for product in collection.products %}
-
           {% render 'product-card', product_product: product %}
 
         {% else %}
@@ -32,24 +25,21 @@
             <h1>There Are No Product In Your Collection</h1>
           </div>
         {% endfor %}
-
       </div>
     </div>
   {% endpaginate %}
 </div>
 
-
-
 {% schema %}
-  {
-    "name": "template collection",
-    "settings": [
-      {
-        "type": "number",
-        "id": "number_of_products_per_page",
-        "default": 6,
-        "label": "number of products per page"
-      }
-    ]
-  }
+{
+  "name": "template collection",
+  "settings": [
+    {
+      "type": "number",
+      "id": "number_of_products_per_page",
+      "default": 6,
+      "label": "number of products per page"
+    }
+  ]
+}
 {% endschema %}
