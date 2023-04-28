@@ -9,6 +9,10 @@
 
   <script type="text/javascript">
     var option_value = document.querySelector("#sort_by").value;
+
+    option_value.addEventListner("change",(e) => {
+      alert(e.target.value)
+    })
   </script>
 
   <div class="row justify-content-center">
