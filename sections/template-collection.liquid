@@ -10,7 +10,7 @@
   <script type="text/javascript">
 
 
-document.querySelector("#sort_by").addEventListener('change',(event) => {
+document.getElementById("#sort_by").addEventListener('change',(event) => {
 
    var url = new URL(window.location.href);
   url.searchParams.set("#sort_by", event.currentTarget.value);
