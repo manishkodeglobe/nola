@@ -7,34 +7,24 @@
 
   <!-- Creatting Filter For collections -->
 
-  <script  >
+  <script>
+    document.getElementById("sort_by").addEventListener('change',(event) => {
 
+       var url = new URL(window.location.href);
+      url.searchParams.set("sort_by", event.currentTarget.value);
 
-document.getElementById("sort_by").addEventListener('change',(event) => {
+      window.location = url.href;
 
-   var url = new URL(window.location.href);
-  url.searchParams.set("sort_by", event.currentTarget.value);
+    alert(url)
 
-  window.location = url.href;
-  
-alert(url)
-
-})
- 
-    
-
-
-
- 
- 
- 
+    })
   </script>
+
   <div class="filters">
     <div class="flex justify-center items-center">
       <select name="sorting" id="sort_by" class="form-select border px-4 py-2  w-25">
         {% for option in collection.sort_options %}
           <option
-           
             value="{{ option.value }}"
             {% if option.value == collection.sort_by %}
               selected
