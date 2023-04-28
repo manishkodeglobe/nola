@@ -20,21 +20,19 @@
     })
   </script>
 
-  <div class="filters">
-    <div class="flex justify-center items-center">
-      <select name="sorting" id="sort_by" class="form-select border px-4 py-2  w-25">
-        {% for option in collection.sort_options %}
-          <option
-            value="{{ option.value }}"
-            {% if option.value == collection.sort_by %}
-              selected
-            {% endif %}
-          >
-            {{ option.name }}
-          </option>
-        {% endfor %}
-      </select>
-    </div>
+  <div class="row justify-content-center">
+    <select name="sorting" id="sort_by" class="form-select form-select-sm w-25">
+      {% for option in collection.sort_options %}
+        <option
+          value="{{ option.value }}"
+          {% if option.value == collection.sort_by %}
+            selected
+          {% endif %}
+        >
+          {{ option.name }}
+        </option>
+      {% endfor %}
+    </select>
   </div>
   <!-- Creatting Filter For collections -->
 
