@@ -8,12 +8,14 @@
   <!-- Creatting Filter For collections -->
 
   <script type="text/javascript">
-    document.querySelector("#sort_by").value;
-    document.querySelector("#sort_by").addEventListener("change",(e) => {
+        document.querySelector("#sort_by").value;
+        document.querySelector("#sort_by").addEventListener("change",(e) => {
 
+    if(e.target.value == ""){
+      alert("blank")
+    }
 
-      alert(e.target.value)
-    })
+        })
   </script>
 
   <div class="row justify-content-center">
