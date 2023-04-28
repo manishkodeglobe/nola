@@ -8,16 +8,14 @@
   <!-- Creatting Filter For collections -->
 
   <script>
-    document.getElementById("sort_by").addEventListener('change',(event) => {
+    if( document.getElementById('sort_by') != null ) {
+        document.querySelector('#sort_by').addEventListener('change', function(e) {
+            var url = new URL(window.location.href);
+            url.searchParams.set('sort_by', e.currentTarget.value);
 
-       var url = new URL(window.location.href);
-      url.searchParams.set("sort_by", event.currentTarget.value);
-
-      window.location = url.href;
-
-    alert(url)
-
-    })
+            window.location = url.href;
+        });
+    }
   </script>
 
   <div class="row justify-content-center">
