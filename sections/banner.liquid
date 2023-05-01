@@ -1,7 +1,47 @@
-<div class="Home_page_banner">
-  {% render 'home-banner' %}
+<div class="flexslider  ">
+  <ul class="slides">
+
+
+    {% for block in section.blocks %}
+      <li>
+        <img
+          src="{{ block.settings.image | image_url }}"
+          width="full"
+          height="full"
+          loading="lazy" />
+      </li>
+    {% endfor %}
+
+
+
+  </ul>
 </div>
 
 
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque repellendus quasi inventore sit? Cumque voluptatem velit eveniet tempora deserunt. Harum non dolore veniam mollitia! Fugiat quibusdam harum at alias unde.
+{% schema %}
+  {
+    "name": "BannerHomePage",
+
+    "blocks": [
+      {
+        "type": "image",
+        "name": "image_block",
+        "limit": 6,
+        "settings": [
+          {
+            "type": "image_picker",
+            "label": "Banner Slides",
+            "id": "image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "BannerHomePage",
+        "category": "image"
+      }
+    ]
+  }
+{% endschema %}

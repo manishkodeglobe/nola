@@ -1,6 +1,11 @@
 {
   "sections": {
+    "hero": {
+      "type": "banner",
+      "settings": {
  
+      }
+    },
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
@@ -25,6 +30,13 @@
         ]
       }
     },
+
+    "SpecificList-collection-prd":{
+      "type": "HomePage-specific-collection-craousal",
+      "settings": {
+
+      }
+    },
     "second-level-banner": {
       "type": "second-level-banner",
       "settings": {
@@ -38,6 +50,7 @@
     "featured-collection",
     "image-n-text",
     "list-collections",
+    "SpecificList-collection-prd",
     "second-level-banner"
   ]
 }
