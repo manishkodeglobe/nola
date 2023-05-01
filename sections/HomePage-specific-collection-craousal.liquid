@@ -1,4 +1,11 @@
-{% if product.collections.handle == 'tops' %}
-  {{ product.title }}
+{% for product in collections[product.handle].products %}
+  {% if product == 'top' %}
 
-{% endif %}
+    {{ product.title }}
+
+  {% endif %}
+{% endfor %}
+
+
+<h1>Specific Collectionss
+</h1>
