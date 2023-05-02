@@ -12,7 +12,7 @@
         <div class="grid grid-cols-2 md:grid-cols-2 gap-6">
           {% for collection in collections %}
             {% if collection.all_products_count >= 0 %}
-              <div class="w-full py-6 px-3 bg-white rounded shadow-xl" data-section="{{ section.id }}">
+              <div class="w-full pb-6   bg-white rounded shadow-xl" data-section="{{ section.id }}">
                 <div class="w-full h-full">
                   <a class="w-full h-full" href="{{ collection.url }}">
                     {% comment %} <div class="h-80 overflow-hidden"> {% endcomment %}

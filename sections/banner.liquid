@@ -3,13 +3,21 @@
 
 
     {% for block in section.blocks %}
-      <li>
-        <img
-          src="{{ block.settings.image | image_url }}"
-          width="full"
-          height="full"
-          loading="lazy" />
-      </li>
+      {% case block.type %}
+        {% when 'image' %}
+        <li>
+          <img
+            src="{{ block.settings.image | image_url }}"
+            width="full"
+            height="full"
+            loading="lazy" />
+        </li>
+
+      {% else %}
+        {{ 'lifestyle-2' | placeholder_svg_tag }}
+
+      {% endcase %}
+
     {% endfor %}
 
 
@@ -36,12 +44,7 @@
           }
         ]
       }
-    ],
-    "presets": [
-      {
-        "name": "BannerHomePage",
-        "category": "image"
-      }
     ]
+
   }
 {% endschema %}

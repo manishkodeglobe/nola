@@ -2,9 +2,10 @@
   "sections": {
     "hero": {
       "type": "banner",
-      "settings": {
+      "blocks": {
+        "image":{ "type": "image"}
+      },"block_order": ["image"]
  
-      }
     },
     "featured-collection": {
       "type": "featured-collection",
