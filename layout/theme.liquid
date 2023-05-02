@@ -92,7 +92,40 @@
         }
       });
     </script>
+    {% comment %} Swipper for product slider {% endcomment %}
+    <script>
+      const swiper_product = new Swiper('.swiper_product', {
 
-    <script></script>
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+        slidesPerView: 1,
+
+        breakpoints: {
+          '552': {
+            slidesPerView: 1,
+            spaceBetween: 40
+          },
+
+          '762': {
+            slidesPerView: 2,
+            spaceBetween: 40
+          },
+          '1200': {
+            slidesPerView: 3,
+            spaceBetween: 40
+          }
+
+        },
+
+// Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-prev_product',
+          prevEl: '.swiper-button-next_product'
+        }
+      });
+    </script>
+
+
   </body>
 </html>
