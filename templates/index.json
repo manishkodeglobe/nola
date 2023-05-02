@@ -37,6 +37,10 @@
 
       }
     },
+
+    "homepage-specific-collection-2":{
+      "type":"homepage-specific-collection-2"
+    },
     "second-level-banner": {
       "type": "second-level-banner",
       "settings": {
@@ -50,6 +54,7 @@
     "featured-collection",
     "image-n-text",
     "SpecificList-collection-prd",
+    "homepage-specific-collection-2",
     "list-collections",
     
     "second-level-banner"
