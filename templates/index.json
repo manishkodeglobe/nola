@@ -1,6 +1,6 @@
 {
   "sections": {
-    "hero": {
+    "banner": {
       "type": "banner",
       "blocks": {
         "image":{ "type": "image"}
@@ -51,7 +51,7 @@
     }
   },
   "order": [
-    "hero",
+    "banner",
     "featured-collection",
     "image-n-text",
     "SpecificList-collection-prd",

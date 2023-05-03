@@ -22,9 +22,9 @@
   <body>
     {% section 'header' %}
 
-    {% if template == 'index' %}
-      {% section 'banner' %}
-    {% endif %}
+    {% comment %} {% if template == 'index' %}
+    {% section 'banner' %}
+    {% endif %} {% endcomment %}
 
     <main role="main">
       {{ content_for_layout }}
