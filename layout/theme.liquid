@@ -22,9 +22,9 @@
   <body>
     {% section 'header' %}
 
-    {% if template == 'index' %}
-      {% section 'banner' %}
-    {% endif %}
+    {% comment %} {% if template == 'index' %}
+    {% section 'banner' %}
+    {% endif %} {% endcomment %}
 
     <main role="main">
       {{ content_for_layout }}
@@ -58,42 +58,74 @@
     {% comment %} swipper slider {% endcomment %}
     {% comment %} swipper slider {% endcomment %}
     {% comment %} swipper slider {% endcomment %}
-    {% comment %} swipper slider {% endcomment %}
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    {% comment %} swipper slider {% endcomment %}<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"> </script>
 
     <script>
-            const swiper = new Swiper('.swiper', {
+      const swiper = new Swiper('.swiper', {
 
-              // Optional parameters
-              direction: 'horizontal',
-              loop: true,
-              slidesPerView: 1,
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+        slidesPerView: 1,
 
-              breakpoints: {
-                '552': {
-                  slidesPerView: 1,
-                  spaceBetween: 40
-                },
+        breakpoints: {
+          '552': {
+            slidesPerView: 1,
+            spaceBetween: 40
+          },
 
-                '762': {
-                  slidesPerView: 2,
-                  spaceBetween: 40
-                },
-                '1200': {
-                  slidesPerView: 3,
-                  spaceBetween: 40
-                }
+          '762': {
+            slidesPerView: 2,
+            spaceBetween: 40
+          },
+          '1200': {
+            slidesPerView: 3,
+            spaceBetween: 40
+          }
 
-              },
+        },
 
-      // Navigation arrows
-              navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev'
-              }
-            });
+// Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      });
+    </script>
+    {% comment %} Swipper for product slider {% endcomment %}
+    <script>
+      const swiper_product = new Swiper('.swiper_product', {
+
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+        slidesPerView: 1,
+
+        breakpoints: {
+          '552': {
+            slidesPerView: 1,
+            spaceBetween: 40
+          },
+
+          '762': {
+            slidesPerView: 2,
+            spaceBetween: 40
+          },
+          '1200': {
+            slidesPerView: 3,
+            spaceBetween: 40
+          }
+
+        },
+
+// Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-prev_product',
+          prevEl: '.swiper-button-next_product'
+        }
+      });
     </script>
 
-    <script></script>
+
   </body>
 </html>

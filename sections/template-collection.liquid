@@ -1,28 +1,35 @@
 <div class="container mx-auto px-4 py-8">
   <div class="Back_to_Collection_page text-center p-3">
-    <a href="{{ routes.collections_url }}" class="text-base text-gray-400 hover:text-gray-900"
-      >Go Back To CollectionS</a
-    >
+    <a href="{{ routes.collections_url }}" class="text-base text-gray-400 hover:text-gray-900">Go Back To CollectionS</a>
   </div>
 
   <!-- Creatting Filter For collections -->
 
   <script>
-        document.getElementById("sort_by").addEventListener('change',(event) => {
+    document.getElementById("sort_by").addEventListener('change', (event) => {
 
-       var url = new URL(window.location.href);
+      var url = new URL(window.location.href);
       url.searchParams.set("sort_by", event.currentTarget.value);
 
       window.location = url.href;
 
-    alert(url)
+      alert(url)
 
     })
   </script>
 
-  <div class="filters">
+  <div class="filters flex justify-between">
+
+    <div class="min_and_max_amount_functionality"></div>
+
+
+
     <div class="flex justify-center items-center">
-      <select name="sorting" id="sort_by" class="form-select border px-4 py-2 w-25" onchange="location = this.value;">
+      <select
+        name="sorting"
+        id="sort_by"
+        class="form-select border px-4 py-2 w-25"
+        onchange="location = this.value;">
         <option value="{{ collection.url }}">Sort By</option>
         <option value="{{ collection.url }}?sort_by=title-ascending">Name: A to Z</option>
         <option value="{{ collection.url }}?sort_by=title-descending">Name: Z to A</option>
@@ -53,15 +60,15 @@
 </div>
 
 {% schema %}
-{
-  "name": "template collection",
-  "settings": [
-    {
-      "type": "number",
-      "id": "number_of_products_per_page",
-      "default": 6,
-      "label": "number of products per page"
-    }
-  ]
-}
+  {
+    "name": "template collection",
+    "settings": [
+      {
+        "type": "number",
+        "id": "number_of_products_per_page",
+        "default": 6,
+        "label": "number of products per page"
+      }
+    ]
+  }
 {% endschema %}

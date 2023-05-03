@@ -1,15 +1,11 @@
 {
   "sections": {
-    "hero": {
+    "banner": {
       "type": "banner",
-      "settings": {
-        "slide_1": "shopify:\/\/shop_images\/AdobeStock_320686681_Preview.jpg",
-        "slide_2": "shopify:\/\/shop_images\/AdobeStock_547695839_Preview.jpg",
-        "slide_3": "shopify:\/\/shop_images\/AdobeStock_369394275_Preview.jpg",
-        "slide_4": "shopify:\/\/shop_images\/AdobeStock_238206143_Preview.jpg",
-        "slide_5": "shopify:\/\/shop_images\/AdobeStock_369394275_Preview.jpg",
-        "slide_6": "shopify:\/\/shop_images\/AdobeStock_320686681_Preview.jpg"
-      }
+      "blocks": {
+        "image":{ "type": "image"}
+      },"block_order": ["image"]
+ 
     },
     "featured-collection": {
       "type": "featured-collection",
@@ -35,6 +31,17 @@
         ]
       }
     },
+
+    "SpecificList-collection-prd":{
+      "type": "HomePage-specific-collection-craousal",
+      "settings": {
+
+      }
+    },
+
+    "homepage-specific-collection-2":{
+      "type":"homepage-specific-collection-2"
+    },
     "second-level-banner": {
       "type": "second-level-banner",
       "settings": {
@@ -44,10 +51,13 @@
     }
   },
   "order": [
-    "hero",
+    "banner",
     "featured-collection",
     "image-n-text",
+    "SpecificList-collection-prd",
+    "homepage-specific-collection-2",
     "list-collections",
+    
     "second-level-banner"
   ]
 }
